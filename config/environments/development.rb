@@ -17,6 +17,9 @@ Rails.application.configure do
   # Enable server timing.
   config.server_timing = true
 
+  # アクセス許可するホストを追加
+  config.hosts << "DESKTOP-KAC6OHH"
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
