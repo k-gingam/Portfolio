@@ -19,6 +19,7 @@ Rails.application.configure do
 
   # アクセス許可するホストを追加
   config.hosts << "DESKTOP-KAC6OHH"
+  config.hosts << "portfolio-makzxa.fly.dev"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
