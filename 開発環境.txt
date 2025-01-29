@@ -1,0 +1,14 @@
+■ 開発環境: Docker
+■ サーバサイド: Ruby on Rails 7系
+　　Ruby 3.2.2 Rails 7.0.4.3
+■ フロントエンド: HotWire
+■ CSSフレームワーク: bootstrap5系、Silicon（Bootstrapテンプレート）
+■ WebAPI: YouTube IFrame Player API（YouTube埋め込み表示）
+■ インフラ:
+・ Webアプリケーションサーバ: Fly.io
+・ ファイルサーバ: AWS S3
+・ セッションサーバ: Redis（Redis by Upstash）
+・ データベースサーバ: PostgreSQL（Fly Postgres）
+■ その他：
+・ VCS: GitHub
+・ CI/CD: GitHubActions
