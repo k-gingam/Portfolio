@@ -36,9 +36,9 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  #config.active_storage.service = :local
-  
-  #画像がAWSに保存されるように変更
+  # config.active_storage.service = :local
+
+  # 画像がAWSに保存されるように変更
   config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
