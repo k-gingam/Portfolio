@@ -3,6 +3,9 @@ require "carrierwave/storage/file"
 require "carrierwave/storage/fog"
 
 CarrierWave.configure do |config|
+  if Rails.env.development? || Rails.env.test?
+    config.storage = :file
+  elsif Rails.env.production?
     config.storage :fog
     config.fog_directory  = "portfolio-omoro" # バケット名
     config.fog_credentials = {
@@ -12,4 +15,5 @@ CarrierWave.configure do |config|
       region: "ap-northeast-1", # リージョン
       path_style: true
     }
+  end
 end
