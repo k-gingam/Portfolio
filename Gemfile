@@ -31,6 +31,15 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# 画像ファイルアップロード機能の追加
+gem 'carrierwave', '~> 2.0'
+
+# ファイルサーバAWS S3アップロード用のGem
+gem "aws-sdk-s3", require: false
+
+# ファイルサーバAWS S3の操作コード用
+gem 'fog-aws'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
