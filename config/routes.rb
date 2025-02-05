@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-
-  #トップページの設定
+  # トップページの設定
   root "top#index"
 
-  resources :users
-  resource :login, only: %i[ new create ]
-
+  resources :users, only: %i[new create]
+  resource :login, only: %i[new create destroy]
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
