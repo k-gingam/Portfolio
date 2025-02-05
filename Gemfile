@@ -34,7 +34,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # 画像ファイルアップロード機能の追加
-gem "carrierwave", "~> 2.0"
+gem "carrierwave", "~> 3.1"
 
 # ファイルサーバAWS S3アップロード用のGem
 gem "aws-sdk-s3", require: false
