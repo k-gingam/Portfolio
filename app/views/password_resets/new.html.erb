@@ -1,0 +1,12 @@
+<h1>パスワードリセット</h1>
+
+<%= form_with url: password_resets_path, local: true, method: :post do |form| %>
+  <div class="field">
+    <%= form.label "メールアドレス" , style: "display: block"%>
+    <%= form.text_field :email %>
+
+    <div style= "display: block;">
+      <%= form.submit "メールを送信" %>
+    </div>
+  </div>
+<% end %>
