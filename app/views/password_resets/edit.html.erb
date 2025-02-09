@@ -1,0 +1,33 @@
+<h1>パスワードを変更</h1>
+
+<%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
+  <!-- 元々あったエラーメッセージ表示用コード、後で見直す時の参考用に
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  -->
+    
+  <div class="field">
+    <%= f.label "メールアドレス" %><br />
+    <%= @user.email %>
+  </div>
+  <div class="field">
+    <%= f.label "パスワード" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label "パスワード再入力" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "パスワード変更" %>
+  </div>
+<% end %>

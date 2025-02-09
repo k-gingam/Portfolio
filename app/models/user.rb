@@ -10,4 +10,7 @@ class User < ApplicationRecord
   # 名前とメールアドレス用
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
+
+  # パスワードリセット際のトークン設定
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 end

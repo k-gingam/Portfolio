@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-# ログイン機能用
-gem "sorcery"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.0"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -33,6 +31,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# ------ここから自分で記載したgem一覧------
 # 画像ファイルアップロード機能の追加
 gem "carrierwave", "~> 2.0"
 
@@ -44,6 +43,14 @@ gem "fog-aws"
 
 # Lintチェック用
 gem "rubocop", require: false
+
+# ログイン機能用
+gem "sorcery"
+
+# パスワードリセットのテスト用サイトを設定
+gem "letter_opener", group: :development
+gem "config"
+# ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -62,6 +69,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # ------ここから自分で記載したgem一覧------
+  # パスワードリセットのテスト用
+  gem "letter_opener_web"
+  # ------ここまで-----------------------------
 end
 
 group :test do
