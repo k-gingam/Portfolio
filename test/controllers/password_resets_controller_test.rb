@@ -2,11 +2,11 @@ require "test_helper"
 
 class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
   def setup
-    User.create(name: "User", email: "test@example.com", password: "password") # テスト用ユーザーを作成
+    @user = User.create(name: "Test User", email: "test@example.com", password: "password") # テスト用ユーザーを作成
   end
 
   test "should get create" do
-    User.create(name: "User", email: "test@example.com", password: "password")
+    @user = User.create(name: "Test User", email: "test@example.com", password: "password") # テスト用ユーザーを作成
     get password_resets_create_url
     assert_response :success
   end
