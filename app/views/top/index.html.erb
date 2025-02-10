@@ -1,8 +1,8 @@
-<p>仮トップページです。</p>
+<p><%= t('.title') %></p>
 <% if logged_in? %>
   <p> 現在、<%= current_user.name %>でログインしています。</p>
-  <%= link_to 'ログアウトはこちら', login_path, data: { turbo_method: :delete }  %>
+  <%= link_to t('.logout_message'), login_path, data: { turbo_method: :delete }  %>
 <% else %>
-  <%= link_to 'ログインはこちら', new_login_path %>
+  <%= link_to t('.login_message'), new_login_path %>
 <% end %>
-<%= link_to '新規登録はこちら', new_user_path %>
+<%= link_to t('.new_registration'), new_user_path %>

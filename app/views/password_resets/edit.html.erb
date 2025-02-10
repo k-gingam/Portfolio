@@ -1,4 +1,4 @@
-<h1>パスワードを変更</h1>
+<h1><%= t('.title') %></h1>
 
 <%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
   <!-- 元々あったエラーメッセージ表示用コード、後で見直す時の参考用に
@@ -16,18 +16,18 @@
   -->
     
   <div class="field">
-    <%= f.label "メールアドレス" %><br />
+    <%= f.label :email, style: "display: block" %>
     <%= @user.email %>
   </div>
   <div class="field">
-    <%= f.label "パスワード" %><br />
-    <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password, style: "display: block" %>
   </div>
   <div class="field">
-    <%= f.label "パスワード再入力" %><br />
+    <%= f.label :password_confirmation, style: "display: block"  %>
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "パスワード変更" %>
+    <%= f.submit t('.change') %>
   </div>
 <% end %>
