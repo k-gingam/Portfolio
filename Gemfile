@@ -50,6 +50,9 @@ gem "sorcery"
 # パスワードリセットのテスト用サイトを設定
 gem "letter_opener", group: :development
 gem "config"
+
+# i18n設定用
+gem "rails-i18n", "~> 7.0.0"
 # ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

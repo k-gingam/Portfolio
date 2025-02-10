@@ -1,0 +1,55 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード確認
+  logins:
+    new:
+      title: ログインページ
+      login: ログイン
+      new_registration: 新規登録
+      password_forget: パスワードをお忘れの方はこちら
+    create:
+      success_login: ログインしました
+      error_login: ログインに失敗しました
+    destroy:
+      logout: ログアウトしました
+  users:
+    new:
+      title: 新規ユーザー登録
+      submit: 登録
+    create:
+      success_submit: 登録しました
+      error_submit: 登録に失敗しました
+  password_resets:
+    edit:
+      title: パスワード変更
+      change: 変更
+    new:
+      title: パスワードリセット
+      mail_send: 送信
+    create:
+      success_send: パスワード変更用のメールを送信しました
+      error_send: メールアドレスを入力してください
+    update:
+      success_change: パスワード変更しました
+      error_change: 変更失敗しました
+  top:
+    index:
+      title: 仮トップページです。
+      login_message: ログインはこちら
+      logout_message: ログアウトはこちら
+      new_registration: 新規登録はこちら
+  header:
+    login: ログイン
+    logout: ログアウト
+    board: 掲示板
+    board_index: 掲示板一覧
+    create_board: 掲示板作成
+    bookmark_index: ブックマーク一覧
+    profile: プロフィール

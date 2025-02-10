@@ -9,15 +9,15 @@ class LoginsController < ApplicationController
     # ログイン処理が出来たかどうか(Userテーブルからユーザー情報を取得できていれば)
     if @user.present?
       session[:user_id] = @user.id # Cookie保存用
-      redirect_to root_path, notice: "ログインに成功しました"    # トップページに戻る
+      redirect_to root_path, notice: t(".success_login")    # トップページに戻る
     else
-      flash.now[:alert] = "ログインに失敗しました"
+      flash.now[:alert] = t(".error_login")
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: "ログアウトしました"
+    redirect_to root_path, notice: t(".logout")
   end
 end
