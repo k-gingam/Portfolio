@@ -1,8 +1,4 @@
 <p><%= t('.title') %></p>
 <% if logged_in? %>
   <p> 現在、<%= current_user.name %>でログインしています。</p>
-  <%= link_to t('.logout_message'), login_path, data: { turbo_method: :delete }  %>
-<% else %>
-  <%= link_to t('.login_message'), new_login_path %>
 <% end %>
-<%= link_to t('.new_registration'), new_user_path %>
