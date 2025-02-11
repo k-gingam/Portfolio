@@ -37,3 +37,6 @@
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+# Node.js用に使われているファイルが重すぎてプッシュできないので除外
+vendor/bundle/ruby/3.2.0/gems/libv8-node-18.19.0.0-x86_64-linux/vendor/v8/x86_64-linux/libv8/obj/libv8_monolith.a
