@@ -427,6 +427,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   config
   debug
+  ffi
   fog-aws
   importmap-rails
   jbuilder
