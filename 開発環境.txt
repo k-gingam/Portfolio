@@ -1,6 +1,6 @@
 ■ 開発環境: Docker
 ■ サーバサイド: Ruby on Rails 7系
-　　Ruby 3.2.2 Rails 7.0.4.3
+　　Ruby 3.2.2 Rails 7.2.2
 ■ フロントエンド: HotWire
 ■ CSSフレームワーク: bootstrap5系、Silicon（Bootstrapテンプレート）
 ■ WebAPI: YouTube IFrame Player API（YouTube埋め込み表示）
