@@ -436,6 +436,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   rubocop
   rubocop-rails-omakase
+  sassc
   selenium-webdriver
   sorcery
   sprockets-rails
