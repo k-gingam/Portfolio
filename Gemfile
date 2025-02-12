@@ -33,7 +33,7 @@ gem "bootsnap", require: false
 
 # ------ここから自分で記載したgem一覧------
 # 画像ファイルアップロード機能の追加
-gem "carrierwave", "~> 2.0"
+gem "carrierwave", "~> 3.1"
 
 # ファイルサーバAWS S3アップロード用のGem
 gem "aws-sdk-s3", require: false
