@@ -61,7 +61,7 @@ gem "bootstrap", "~> 5.2.0"
 gem "mini_racer"
 
 # 使用用途不明だがgithubのテストエラーによりインストール、多分JavaScript実装時にインストールした時に追加で入れたかも？
-gem "sassc"
+gem "sassc", "2.1.0"
 # ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
