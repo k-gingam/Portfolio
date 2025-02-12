@@ -1,0 +1,605 @@
+current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext
+/usr/local/bin/ruby -rrubygems /Portfolio/vendor/bundle/ruby/3.2.0/gems/rake-13.2.1/exe/rake RUBYARCHDIR\=/Portfolio/vendor/bundle/ruby/3.2.0/extensions/x86_64-linux/3.2.0/sassc-2.0.1 RUBYLIBDIR\=/Portfolio/vendor/bundle/ruby/3.2.0/extensions/x86_64-linux/3.2.0/sassc-2.0.1
+make lib/libsass.so
+cd libsass
+mkdir lib
+cc -Wall -O2 -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/cencode.o src/cencode.c
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/ast.o src/ast.cpp
+In file included from src/ast.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/node.o src/node.cpp
+In file included from src/node.hpp:7,
+                 from src/node.cpp:4:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/context.o src/context.cpp
+In file included from src/context.cpp:9:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/constants.o src/constants.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/functions.o src/functions.cpp
+In file included from src/listize.hpp:7,
+                 from src/functions.hpp:4,
+                 from src/functions.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+src/functions.cpp: In function ‘void Sass::Functions::handle_utf8_error(const Sass::ParserState&, Sass::Backtraces)’:
+src/functions.cpp:110:20: warning: catching polymorphic type ‘class utf8::invalid_code_point’ by value [-Wcatch-value=]
+  110 |       catch (utf8::invalid_code_point) {
+      |                    ^~~~~~~~~~~~~~~~~~
+src/functions.cpp:114:20: warning: catching polymorphic type ‘class utf8::not_enough_room’ by value [-Wcatch-value=]
+  114 |       catch (utf8::not_enough_room) {
+      |                    ^~~~~~~~~~~~~~~
+src/functions.cpp:118:20: warning: catching polymorphic type ‘class utf8::invalid_utf8’ by value [-Wcatch-value=]
+  118 |       catch (utf8::invalid_utf8) {
+      |                    ^~~~~~~~~~~~
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/color_maps.o src/color_maps.cpp
+In file included from src/color_maps.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/environment.o src/environment.cpp
+In file included from src/environment.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/ast_fwd_decl.o src/ast_fwd_decl.cpp
+In file included from src/ast_fwd_decl.cpp:1:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/bind.o src/bind.cpp
+In file included from src/bind.cpp:3:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/file.o src/file.cpp
+In file included from src/listize.hpp:7,
+                 from src/functions.hpp:4,
+                 from src/sass_functions.hpp:6,
+                 from src/file.cpp:23:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/util.o src/util.cpp
+In file included from src/util.cpp:3:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/json.o src/json.cpp
+src/json.cpp: In function ‘char* json_encode_string(const char*)’:
+src/json.cpp:405:15: warning: catching polymorphic type ‘class std::exception’ by value [-Wcatch-value=]
+  405 |   catch (std::exception) {
+      |               ^~~~~~~~~
+src/json.cpp: In function ‘char* json_stringify(const JsonNode*, const char*)’:
+src/json.cpp:424:15: warning: catching polymorphic type ‘class std::exception’ by value [-Wcatch-value=]
+  424 |   catch (std::exception) {
+      |               ^~~~~~~~~
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/units.o src/units.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/values.o src/values.cpp
+In file included from src/values.hpp:4,
+                 from src/values.cpp:3:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/plugins.o src/plugins.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/position.o src/position.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/lexer.o src/lexer.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/parser.o src/parser.cpp
+In file included from src/parser.hpp:7,
+                 from src/parser.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/prelexer.o src/prelexer.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/eval.o src/eval.cpp
+In file included from src/eval.hpp:4,
+                 from src/eval.cpp:10:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/expand.o src/expand.cpp
+In file included from src/expand.cpp:5:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/listize.o src/listize.cpp
+In file included from src/listize.hpp:7,
+                 from src/listize.cpp:6:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/cssize.o src/cssize.cpp
+In file included from src/cssize.hpp:4,
+                 from src/cssize.cpp:6:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/extend.o src/extend.cpp
+In file included from src/extend.hpp:7,
+                 from src/extend.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/output.o src/output.cpp
+In file included from src/output.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/inspect.o src/inspect.cpp
+In file included from src/inspect.cpp:9:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/emitter.o src/emitter.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/check_nesting.o src/check_nesting.cpp
+In file included from src/check_nesting.hpp:4,
+                 from src/check_nesting.cpp:4:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/remove_placeholders.o src/remove_placeholders.cpp
+In file included from src/remove_placeholders.hpp:6,
+                 from src/remove_placeholders.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass.o src/sass.cpp
+In file included from src/listize.hpp:7,
+                 from src/functions.hpp:4,
+                 from src/sass_functions.hpp:6,
+                 from src/sass.cpp:11:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass_util.o src/sass_util.cpp
+In file included from src/node.hpp:7,
+                 from src/sass_util.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass_values.o src/sass_values.cpp
+In file included from src/eval.hpp:4,
+                 from src/sass_values.cpp:5:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass_context.o src/sass_context.cpp
+In file included from src/sass_context.cpp:9:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass_functions.o src/sass_functions.cpp
+In file included from src/values.hpp:4,
+                 from src/sass_functions.cpp:5:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/sass2scss.o src/sass2scss.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/backtrace.o src/backtrace.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/operators.o src/operators.cpp
+In file included from src/values.hpp:4,
+                 from src/operators.hpp:4,
+                 from src/operators.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/to_c.o src/to_c.cpp
+In file included from src/to_c.cpp:3:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/to_value.o src/to_value.cpp
+In file included from src/to_value.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/source_map.o src/source_map.cpp
+In file included from src/source_map.cpp:7:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/subset_map.o src/subset_map.cpp
+In file included from src/subset_map.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/error_handling.o src/error_handling.cpp
+In file included from src/error_handling.cpp:2:
+src/ast.hpp: In member function ‘virtual size_t Sass::Number::hash()’:
+src/ast.hpp:1614:25: warning: loop variable ‘numerator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+src/ast.hpp:1614:25: note: use reference type to prevent copying
+ 1614 |         for (const auto numerator : numerators)
+      |                         ^~~~~~~~~
+      |                         &
+src/ast.hpp:1616:25: warning: loop variable ‘denominator’ creates a copy from type ‘const std::__cxx11::basic_string<char>’ [-Wrange-loop-construct]
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+src/ast.hpp:1616:25: note: use reference type to prevent copying
+ 1616 |         for (const auto denominator : denominators)
+      |                         ^~~~~~~~~~~
+      |                         &
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/memory/SharedPtr.o src/memory/SharedPtr.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/utf8_string.o src/utf8_string.cpp
+g++ -Wall -O2 -std=c++0x -I /Portfolio/vendor/bundle/ruby/3.2.0/gems/sassc-2.0.1/ext/libsass/include -fPIC -fPIC -c -o src/base64vlq.o src/base64vlq.cpp
+g++ -shared -Wall -O2 -Wl,-undefined,error -std=c++0x -ldl -fPIC -fPIC -o lib/libsass.so src/cencode.o src/ast.o src/node.o src/context.o src/constants.o src/functions.o src/color_maps.o src/environment.o src/ast_fwd_decl.o src/bind.o src/file.o src/util.o src/json.o src/units.o src/values.o src/plugins.o src/position.o src/lexer.o src/parser.o src/prelexer.o src/eval.o src/expand.o src/listize.o src/cssize.o src/extend.o src/output.o src/inspect.o src/emitter.o src/check_nesting.o src/remove_placeholders.o src/sass.o src/sass_util.o src/sass_values.o src/sass_context.o src/sass_functions.o src/sass2scss.o src/backtrace.o src/operators.o src/to_c.o src/to_value.o src/source_map.o src/subset_map.o src/error_handling.o src/memory/SharedPtr.o src/utf8_string.o src/base64vlq.o -lm -lstdc++ -ldl
+cd -
