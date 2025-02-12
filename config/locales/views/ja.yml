@@ -41,10 +41,14 @@ ja:
       error_change: 変更失敗しました
   top:
     index:
+      site: Omoro
       title: 仮トップページです。
-      login_message: ログインはこちら
-      logout_message: ログアウトはこちら
-      new_registration: 新規登録はこちら
+      search: 検索
+      login: ログイン
+      new_registration: 新規登録
+      mypage: マイページ
+      setting: 設定
+      logout: ログアウト
   header:
     login: ログイン
     logout: ログアウト
