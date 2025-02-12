@@ -62,7 +62,6 @@ gem "mini_racer"
 
 # 使用用途不明だがgithubのテストエラーによりインストール、多分JavaScript実装時にインストールした時に発生？
 gem "sassc", "< 2.2.0"
-gem "ffi"
 # ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
