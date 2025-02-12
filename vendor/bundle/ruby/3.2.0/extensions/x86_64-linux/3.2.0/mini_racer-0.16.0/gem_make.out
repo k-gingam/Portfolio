@@ -1,20 +1,21 @@
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/mini_racer-0.16.0/ext/mini_racer_extension
 /usr/local/bin/ruby extconf.rb
+Ignoring date-3.4.1 because its extensions are not built. Try: gem pristine date --version 3.4.1
 checking for -lpthread... yes
 checking for whether -Wl,--exclude-libs=ALL  is accepted as LDFLAGS... yes
 creating Makefile
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/mini_racer-0.16.0/ext/mini_racer_extension
-make DESTDIR\= sitearchdir\=./.gem.20250211-1-7x4f0l sitelibdir\=./.gem.20250211-1-7x4f0l clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nuyau6 sitelibdir\=./.gem.20250213-1-nuyau6 clean
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/mini_racer-0.16.0/ext/mini_racer_extension
-make DESTDIR\= sitearchdir\=./.gem.20250211-1-7x4f0l sitelibdir\=./.gem.20250211-1-7x4f0l
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nuyau6 sitelibdir\=./.gem.20250213-1-nuyau6
 compiling mini_racer_extension.cc
 linking shared-object mini_racer_extension.so
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/mini_racer-0.16.0/ext/mini_racer_extension
-make DESTDIR\= sitearchdir\=./.gem.20250211-1-7x4f0l sitelibdir\=./.gem.20250211-1-7x4f0l install
-/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20250211-1-7x4f0l
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nuyau6 sitelibdir\=./.gem.20250213-1-nuyau6 install
+/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20250213-1-nuyau6
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/mini_racer-0.16.0/ext/mini_racer_extension
-make DESTDIR\= sitearchdir\=./.gem.20250211-1-7x4f0l sitelibdir\=./.gem.20250211-1-7x4f0l clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nuyau6 sitelibdir\=./.gem.20250213-1-nuyau6 clean
