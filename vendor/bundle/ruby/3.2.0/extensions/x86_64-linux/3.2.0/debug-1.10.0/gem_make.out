@@ -3,17 +3,17 @@ current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/deb
 creating Makefile
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-xhz2ul sitelibdir\=./.gem.20250129-1-xhz2ul clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nlzgcx sitelibdir\=./.gem.20250213-1-nlzgcx clean
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-xhz2ul sitelibdir\=./.gem.20250129-1-xhz2ul
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nlzgcx sitelibdir\=./.gem.20250213-1-nlzgcx
 compiling debug.c
 compiling iseq_collector.c
 linking shared-object debug/debug.so
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-xhz2ul sitelibdir\=./.gem.20250129-1-xhz2ul install
-/usr/bin/install -c -m 0755 debug.so ./.gem.20250129-1-xhz2ul/debug
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nlzgcx sitelibdir\=./.gem.20250213-1-nlzgcx install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250213-1-nlzgcx/debug
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-xhz2ul sitelibdir\=./.gem.20250129-1-xhz2ul clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-nlzgcx sitelibdir\=./.gem.20250213-1-nlzgcx clean

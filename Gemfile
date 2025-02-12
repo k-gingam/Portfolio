@@ -53,6 +53,15 @@ gem "config"
 
 # i18n設定用
 gem "rails-i18n", "~> 7.0.0"
+
+# CSSフレームワークのBootstrap5をインストール
+gem "bootstrap", "~> 5.2.0"
+
+# JavaScript実行に必要なランタイム用
+gem "mini_racer"
+
+# 使用用途不明だがgithubのテストエラーによりインストール、多分JavaScript実装時にインストールした時に発生？
+gem "timeout", "~> 0.4.3"
 # ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

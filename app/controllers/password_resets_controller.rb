@@ -18,9 +18,9 @@ class PasswordResetsController < ApplicationController
     # Tell the user instructions have been sent whether or not email was found.
     # This is to not leak information to attackers about which emails exist in the system.
     if params[:email].present?
-      redirect_to(root_path, notice: t(".success_send"))
+      redirect_to(root_path, success: t(".success_send"))
     else
-      flash.now[:alert] = t(".error_send")
+      flash.now[:danger] = t(".error_send")
       render :new, status: :unprocessable_entity
     end
   end
@@ -49,9 +49,9 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     # the next line clears the temporary token and updates the password
     if @user.change_password(params[:user][:password])
-      redirect_to(root_path, notice: t(".success_change"))
+      redirect_to(root_path, success: t(".success_change"))
     else
-      flash.now[:alert] = t(".error_change")
+      flash.now[:danger] = t(".error_change")
       render action: "edit", status: :unprocessable_entity
     end
   end

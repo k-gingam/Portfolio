@@ -13,10 +13,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-vdwlqr sitelibdir\=./.gem.20250129-1-vdwlqr clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-yquvk1 sitelibdir\=./.gem.20250213-1-yquvk1 clean
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-vdwlqr sitelibdir\=./.gem.20250129-1-vdwlqr
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-yquvk1 sitelibdir\=./.gem.20250213-1-yquvk1
 compiling bytebuffer.c
 bytebuffer.c: In function ‘Init_NIO_ByteBuffer’:
 bytebuffer.c:59:6: warning: old-style function definition [-Wold-style-definition]
@@ -253,8 +253,8 @@ compiling selector.c
 linking shared-object nio4r_ext.so
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-vdwlqr sitelibdir\=./.gem.20250129-1-vdwlqr install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20250129-1-vdwlqr
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-yquvk1 sitelibdir\=./.gem.20250213-1-yquvk1 install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20250213-1-yquvk1
 
 current directory: /Portfolio/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250129-1-vdwlqr sitelibdir\=./.gem.20250129-1-vdwlqr clean
+make DESTDIR\= sitearchdir\=./.gem.20250213-1-yquvk1 sitelibdir\=./.gem.20250213-1-yquvk1 clean
