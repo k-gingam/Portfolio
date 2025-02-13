@@ -1,0 +1,28 @@
+<div class="profile_name">
+  <div class="image">
+    <% if @user.icon.url.present? %>
+       <%= image_tag @user.icon.url %>
+    <% else %>
+      <%= image_tag "DefaultUserIcon.png" %>
+    <% end %>
+  </div>
+  <div class="name">
+    <p><%= @user.name %></p>
+  </div>
+  <div class="follower">
+    <p>○○人のフォロワー</p>
+  </div>
+  <div class="button">
+    <% if @user.id == current_user.id %>
+      <%= link_to t('.edit'), edit_profile_path(current_user.id), class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "フォロー", "#", class: "btn btn-light" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="text">
+  <p><%= @user.introduction %></p>
+</div>
+
+<hr>

@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   # root(トップページ)のルーティング設定
   root "top#index"
 
-  # ユーザー処理のルーティング設定
+  # ユーザー登録処理のルーティング設定
   resources :users, only: %i[new create]
   # ログイン処理のルーティング設定
   resource :login, only: %i[new create destroy]
   # パスワードリセットのルーティング設定
   resources :password_resets, only: %i[new create edit update]
+  # プロフィール画面のルーティング設定
+  resources :profiles, only: %i[show edit update destroy]
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

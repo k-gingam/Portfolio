@@ -8,3 +8,7 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
+        icon: アイコン
+        introduction: 自己紹介
+        favorite_game: お気に入りのゲーム
+        google_acount: Googleアカウント

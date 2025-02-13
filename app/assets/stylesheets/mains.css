@@ -1,0 +1,106 @@
+/*---------- profile/showで使用 -----------*/
+  .profile_name {
+    /* アイコンと名前が横並びになるように */
+    display: flex;
+    height: 100px;
+  }
+
+  .profile_name .image {
+    /* 画像を読み込む際、位置調整とはみ出たときの対応 */
+    overflow: hidden;
+    position: relative;
+
+    /* 親要素の横と高さが並ぶように設定 */
+    height: 100%;
+    aspect-ratio: 1; 
+
+    /* アイコンを円形にし、外線を追加 */
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1px;
+    border: 1px solid #333300;
+  }
+
+  /* 画像を読み込む前にアスペクト比設定 */
+  .profile_name .image::before {
+    content: "";
+    display: block;
+    padding-top: 58%;
+  }
+
+  /* 画像の大きさ調整用 */
+  .profile_name .image img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .profile_name .name {
+    /* 名前表示の位置調整、上下だけゴリ押し気味 */
+    margin: 0 0 0 20px;
+    height: 100%;
+    line-height: 100px;
+
+    /* 名前を太字、フォントを大きく */
+    font-weight: bold;
+    font-size: 35px;
+  }
+
+  .profile_name .follower {
+    /* 名前表示の位置調整、上下だけゴリ押し気味 */
+    margin: 0 0 0 10px;
+    height: 100%;
+    line-height: 120px;
+
+    font-weight: lighter;
+  } 
+
+  .profile_name .button {
+    /* ボタン表示の位置調整、上下だけゴリ押し気味 */
+    height: 100%;
+    line-height: 100px;
+    margin: 0 0 0 50px;
+  }
+
+  .text {
+    margin: 0 0 0 120px;
+  }
+
+/*---------- profile/editで使用 -----------*/
+
+  .profile_edit{
+    display: flex;
+    flex-direction: row;   
+  }
+  
+  .profile_edit .icon_form{
+    display: inline-block; 
+  }
+
+  .profile_edit .text_form{
+    margin: 5px 0 0 20px;
+  }
+
+  #preview {
+    content: "";
+    display: block;
+    padding-top: 58%;
+
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    /* アイコンを円形にし、外線を追加 */
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1px;
+    border: 1px solid #333300;
+    }

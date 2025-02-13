@@ -5,9 +5,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
-    storage :fog # 本番環境ではfogを使用
+    storage :fog # 本番環境ではAWS s3にアップロード
   else
-    storage :file # 開発環境とテスト環境ではfileを使用
+    storage :file # 開発環境とテスト環境ではローカル内にアップロード
   end
   # storage :fog
 
@@ -39,9 +39,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_allowlist
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_allowlist
+    %w[jpg jpeg png]
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
