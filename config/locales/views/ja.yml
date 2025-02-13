@@ -5,9 +5,14 @@ ja:
       submit: 保存
       update: 更新
     label:
+      name: 名前
       email: メールアドレス
       password: パスワード
       password_confirmation: パスワード確認
+      icon: アイコン
+      introduction: 自己紹介
+      favorite_game: お気に入りのゲーム
+      google_acount: Googleアカウント
   logins:
     new:
       title: ログインページ
@@ -49,6 +54,10 @@ ja:
       mypage: マイページ
       setting: 設定
       logout: ログアウト
+  profiles:
+    show:
+      title: プロフィール
+      edit: 編集
   header:
     login: ログイン
     logout: ログアウト

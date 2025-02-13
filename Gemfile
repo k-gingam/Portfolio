@@ -33,7 +33,7 @@ gem "bootsnap", require: false
 
 # ------ここから自分で記載したgem一覧------
 # 画像ファイルアップロード機能の追加
-gem "carrierwave", "~> 2.0"
+gem "carrierwave"
 
 # ファイルサーバAWS S3アップロード用のGem
 gem "aws-sdk-s3", require: false
@@ -62,10 +62,16 @@ gem "mini_racer"
 
 # 使用用途不明だがgithubのテストエラーによりインストール、多分JavaScript実装時にインストールした時に発生？
 gem "timeout", "~> 0.4.3"
-# ------ここまで-----------------------------
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+# 画像加工目的用
+gem "mini_magick"
+gem "image_processing", "~> 1.2"
+
+# .envファイルを読み込ませる用
+gem "dotenv"
+
+# ------ここまで-----------------------------
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

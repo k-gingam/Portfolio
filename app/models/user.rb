@@ -13,4 +13,10 @@ class User < ApplicationRecord
 
   # パスワードリセット際のトークン設定
   validates :reset_password_token, uniqueness: true, allow_nil: true
+
+  # アイコンの保存設定
+  mount_uploader :icon, AvatarUploader
+
+  # 自己紹介のテキスト設定
+  validates :introduction, length: { maximum: 140 }
 end
