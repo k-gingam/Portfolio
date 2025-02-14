@@ -24,11 +24,13 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
+    <header>
+      <% if logged_in? %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/before_login_header' %>
+      <% end %>
+    </header>
     <div class="container-fluid">
       <!-- サイドバー、メインコンテンツの比率を変えたい場合はcolを設定(2つのcolの合計がが12になるように) -->
       <div class="row">
