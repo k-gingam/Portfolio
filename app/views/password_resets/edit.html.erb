@@ -1,6 +1,7 @@
 <h1><%= t('.title') %></h1>
 
 <%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
+
   <!-- 元々あったエラーメッセージ表示用コード、後で見直す時の参考用に
   <% if @user.errors.any? %>
     <div id="error_explanation">

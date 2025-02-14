@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   # プロフィール画面のルーティング設定
   resources :profiles, only: %i[show edit update destroy]
+  # 設定画面のルーティング設定
+  resources :settings, only: %i[edit update destroy]
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

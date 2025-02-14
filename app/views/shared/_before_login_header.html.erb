@@ -1,5 +1,5 @@
 <!-- 未ログイン時のヘッダー用ページ -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary", style="background-color: #f08080;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary", style="background-color: #f08080; height: 80px;">
   <div class="container-fluid">
     <!-- サイト名、 検索バー表示 -->
     <%= link_to t('top.index.site'), root_path, class: "navbar-brand"%>
@@ -11,7 +11,7 @@
     </ul>
     <!-- ログイン、新規登録ボタン表示 -->
     <div class="justify-content-end">
-      <%= link_to t('top.index.login'), new_login_path, class: "btn btn-light me-2", style: "width: 100px;" %>
+      <%= link_to t('top.index.login'), new_login_path, class: "btn btn-light me-2", style: "width: 100px; height: 40px;" %>
       <%= link_to t('top.index.new_registration'), new_user_path, class: "btn btn-primary", style: "width: 100px;"%>
     </div>
   </div>
