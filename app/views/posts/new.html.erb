@@ -1,0 +1,15 @@
+<h1>ポスト画面</h1>
+
+<%= form_with model: @post do |form| %>
+  <%= form.label :movie_url, style: "display: block" %>
+  <%= form.text_field :movie_url %>
+  <%= form.label :comment, style: "display: block" %>
+  <%= form.text_area :comment, cols: 30, rows: 5, style: "resize: none;" %>
+  <%= form.label :tag, style: "display: block" %>
+  <%= form.text_field :tag %>
+
+  <div style="display: block;">
+    <%= form.submit t('.submit') %>
+  </div>
+<% end %>
+

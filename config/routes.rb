@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[show edit update destroy]
   # 設定画面のルーティング設定
   resources :settings, only: %i[edit update destroy]
+  # ポスト画面のルーティング設定
+  resources :posts, only: %i[new create destroy]
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  # ポストと関連付け、このユーザーが削除されたらポストも削除
+  has_many :posts, dependent: :destroy
+
   # パスワード入力用
   # 新規ユーザー登録、パスワード変更の際に入力されたパスワードが正しいか
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
