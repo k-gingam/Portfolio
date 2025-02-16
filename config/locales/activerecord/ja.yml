@@ -12,3 +12,7 @@ ja:
         introduction: 自己紹介
         favorite_game: お気に入りのゲーム
         google_acount: Googleアカウント
+      post:
+        movie_url: 動画URL
+        comment: コメント
+        tag: タグ

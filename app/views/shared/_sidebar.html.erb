@@ -1,12 +1,18 @@
 <!-- サイドバー表示用、本リリースでサイドバー実装を行う予定 -->
 <nav id="sidebar" class="col-lg-2 d-md-block sidebar collapse">
   <div class="position-sticky pt-md-5">
-    <ul class="nav flex-column">
+    <ul class="nav flex-column d-flex">
+      <% if logged_in? %>
+        <div class="post" style="text-align: center;">
+          <%= link_to t('sidebar.post'), new_post_path, class: "btn btn-primary", style: "width: 70%;" %>
+        </div>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span class="ml-2">Coming soon...</span>
         </a>
       </li>
+
       <!-- サンプルコード(サイドバー実装時にまた触る)
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#">
@@ -21,6 +27,7 @@
         </a>
       </li>
       -->
+
     </ul>
   </div>
 </nav>

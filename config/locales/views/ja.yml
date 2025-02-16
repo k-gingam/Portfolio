@@ -58,11 +58,18 @@ ja:
     show:
       title: プロフィール
       edit: 編集
+      follow: フォロー
+    edit:
+      change: 変更
+  posts:
+    new:
+      submit: 投稿
+    create:
+      success_post: ポストを投稿しました
+      error_post: 投稿失敗しました
   header:
     login: ログイン
     logout: ログアウト
-    board: 掲示板
-    board_index: 掲示板一覧
-    create_board: 掲示板作成
-    bookmark_index: ブックマーク一覧
-    profile: プロフィール
+    search: 検索
+  sidebar:
+    post: 投稿
