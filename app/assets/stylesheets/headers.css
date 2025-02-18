@@ -1,4 +1,10 @@
 
+header{
+    position: sticky;
+    top: 0;
+    z-index: 150;
+}
+
 #header_icon{
     content: "";
     padding-top: 58%;
@@ -11,4 +17,6 @@
     border-radius: 50%;
     padding: 0px;
     border: 1px solid #333300;
+
+    background-color: white;
 }

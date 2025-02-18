@@ -19,6 +19,8 @@
     border-radius: 50%;
     padding: 1px;
     border: 1px solid #333300;
+
+    background-color: white;
   }
 
   /* 画像を読み込む前にアスペクト比設定 */
@@ -71,21 +73,19 @@
   }
 
 /*---------- profile/editで使用 -----------*/
-
   .profile_edit{
+    /* 要素を左から右に横並びにする */
     display: flex;
     flex-direction: row;   
   }
-  
-  .profile_edit .icon_form{
-    display: inline-block; 
-  }
 
   .profile_edit .text_form{
+    /* アイコンフォームとの余白調整 */
     margin: 5px 0 0 20px;
   }
 
   #preview {
+    /* プレビュー用のアイコン表示設定、基本はprofile/showで使ったものと同じ */
     content: "";
     display: block;
     padding-top: 58%;
@@ -103,4 +103,43 @@
     border-radius: 50%;
     padding: 1px;
     border: 1px solid #333300;
+
+    background-color: white;
     }
+  
+  /*---------- share/_postで使用 -----------*/
+
+  .card{
+    width: 95%;
+    margin: 10px auto;
+    box-shadow: 2px 2px 3px;
+  }
+
+  .card .card-user .icon{
+    content: "";
+    display: block;
+    padding-top: 58%;
+
+    display: block;
+    overflow: hidden;
+    
+    /*card-icon要素にはwidthとheightが適用されていたが、画像には適用されなかった。
+      ひとまずhtml側で画像のサイズを直接指定して解決。*/
+    width: 40px;
+    height: 40px;
+    
+    /* アイコンを円形にし、外線を追加 */
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0px;
+    border: 1px solid #333300;
+  
+    background-color: white;    
+  }
+
+  .card .card-user .name{
+    /* 名前表示の位置調整、上下だけゴリ押し気味 */
+    margin: 0 0 0 3px;
+    height: 40px;
+    line-height: 40px;
+  }
