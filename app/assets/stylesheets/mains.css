@@ -110,8 +110,8 @@
   /*---------- share/_postで使用 -----------*/
 
   .card{
-    width: 95%;
-    margin: 10px auto;
+    width: 80%;
+    margin: 20px auto;
     box-shadow: 2px 2px 3px;
   }
 

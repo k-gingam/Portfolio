@@ -67,6 +67,8 @@ ja:
     create:
       success_post: ポストを投稿しました
       error_post: 投稿失敗しました
+    delete:
+      delete_post: ポストを削除しました
   header:
     login: ログイン
     logout: ログアウト
