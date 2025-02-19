@@ -71,6 +71,9 @@ gem "image_processing", "~> 1.2"
 # .envファイルを読み込ませる用
 gem "dotenv"
 
+# YouTube APIを使うためのGoogle API
+gem "google-api-client", "~> 0.11"
+
 # ------ここまで-----------------------------
 
 group :development, :test do
