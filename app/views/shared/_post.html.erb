@@ -14,9 +14,8 @@
       </div>
     </div>
     <!-- コメント、タイトルなどの表示 -->
-    <div class="col-md-9">
+    <div class="col-md-7">
       <div class="card-body d-flex flex-column" style="padding: 10px; height: 100%;">
-
         <!-- ユーザーの表示 -->
         <%= link_to profile_path(post.user.id), style: "text-decoration: none; color: inherit;" do %>
           <div class="card-user d-flex">
@@ -47,6 +46,14 @@
           <%= postview_count(post) %>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-2 d-flex" style="justify-content: flex-end; align-items: center;">
+      <% if logged_in? && request.path == profile_path(current_user.id) %>
+        <div class="delete-button" style="margin-right: 10%">
+          <%= link_to "削除", post_path(post.id), class: "btn btn-danger" ,  data: { turbo_method: :delete, turbo_confirm: "ポストを削除しますか？" }%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
