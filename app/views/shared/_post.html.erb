@@ -39,7 +39,7 @@
         <!-- 動画タイトル、表示回数、投稿日を下寄せで表示 -->
         <div class="card-other", style="margin-top: auto;"> 
           <% if !video_item.nil? %>
-            <%= link_to video_item.snippet.title, sanitize(Post.new.movie_url), target: :_blank %>
+            <%= link_to video_item.snippet.title, "https://www.youtube.com/watch?v=" + @video_id, target: :_blank %>
           <% else %>
             動画が見つかりませんでした。
           <% end %>

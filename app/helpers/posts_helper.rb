@@ -4,15 +4,15 @@ module PostsHelper
     require "google/apis/youtube_v3"
 
     # 入力されたURLからvideo_idを取得
-    video_id = get_video_id(video_url)
+    @video_id = get_video_id(video_url)
 
     # 取得した動画情報は1日だけキャッシュに保存(YouTubeリクエスト制限対策)
-    Rails.cache.fetch("youtube_thumbnail_#{video_id}", expires_in: 1.day) do
+    Rails.cache.fetch("youtube_thumbnail_#{@video_id}", expires_in: 1.day) do
       youtube = Google::Apis::YoutubeV3::YouTubeService.new
       youtube.key = ENV["YOUTUBE_ACCESS_KEY_ID"]
 
       # ビデオの詳細情報（snippet）を取得
-      video_response = youtube.list_videos("snippet", id: video_id)
+      video_response = youtube.list_videos("snippet", id: @video_id)
       video_response.items.first
     end
   end
