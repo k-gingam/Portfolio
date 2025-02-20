@@ -47,7 +47,7 @@ gem "rubocop", require: false
 # ログイン機能用
 gem "sorcery"
 
-# パスワードリセットのテスト用サイトを設定
+# パスワードリセットのテスト用サイトを開発環境のみ設定
 gem "letter_opener", group: :development
 gem "config"
 
@@ -73,6 +73,9 @@ gem "dotenv"
 
 # YouTube APIを使うためのGoogle API
 gem "google-api-client", "~> 0.11"
+
+# 検索機能を実装する用
+gem "ransack"
 
 # ------ここまで-----------------------------
 

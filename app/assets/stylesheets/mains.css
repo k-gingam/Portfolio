@@ -125,8 +125,8 @@
     
     /*card-icon要素にはwidthとheightが適用されていたが、画像には適用されなかった。
       ひとまずhtml側で画像のサイズを直接指定して解決。*/
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     
     /* アイコンを円形にし、外線を追加 */
     object-fit: cover;
@@ -140,6 +140,6 @@
   .card .card-user .name{
     /* 名前表示の位置調整、上下だけゴリ押し気味 */
     margin: 0 0 0 3px;
-    height: 40px;
-    line-height: 40px;
+    height: 25px;
+    line-height: 25px;
   }
