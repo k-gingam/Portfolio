@@ -55,7 +55,7 @@ gem "config"
 gem "rails-i18n", "~> 7.0.0"
 
 # CSSフレームワークのBootstrap5をインストール
-gem "bootstrap", "~> 5.2.0"
+gem "bootstrap", "~> 5.3.3"
 
 # JavaScript実行に必要なランタイム用
 gem "mini_racer"
