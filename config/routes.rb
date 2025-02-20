@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :settings, only: %i[edit update destroy]
   # ポスト画面のルーティング設定
   resources :posts, only: %i[new create destroy]
+  # ポスト検索画面のルーティング追加
+  get "posts/search",  to: "posts#search"
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

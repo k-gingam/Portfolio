@@ -33,4 +33,13 @@ class Post < ApplicationRecord
       # end
     end
   end
+
+  # ポスト検索する際、検索可能なカラムの追加
+  def self.ransackable_attributes(auth_object = nil)
+    [ "comment", "created_at", "id", "movie_url", "updated_at", "user_id", "view_count" ]
+  end
+  # ポスト検索する際、検索可能なテーブルの追加
+  def self.ransackable_associations(auth_object = nil)
+    [ "post_tags", "tags", "user" ]
+  end
 end

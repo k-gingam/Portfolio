@@ -26,6 +26,16 @@ module PostsHelper
     URI(uri.path.split("/").last)  # URLに含まれている動画idを返す
   end
 
+  def get_tag_name(id)
+    @tag_names = []
+    if PostTag.exists?(post_id: id)
+      PostTag.where(post_id: id).each do |tag|
+        @tag_names << Tag.find_by(id: tag.tag_id).name
+      end
+    end
+    @tag_names
+  end
+
   # ポストが表示された回数をカウントするメソッド
   def postview_count(post)
     Post.find_by(id: post.id).update(view_count: post.view_count + 1)

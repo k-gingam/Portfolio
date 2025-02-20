@@ -6,4 +6,9 @@ class Tag < ApplicationRecord
 
   # ぶっちゃけいらないかもだけど念のためバリデーションを作成
   validates :name, presence: true, length: { maximum: 255 }
+
+  # ポスト検索する際、検索可能なカラムの追加
+  def self.ransackable_attributes(auth_object = nil)
+    [ "created_at", "id", "name", "updated_at" ]
+  end
 end
