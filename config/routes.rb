@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   # ポスト検索画面のルーティング追加
   get "posts/search",  to: "posts#search"
 
+  # route.rbに追記
+  post "follow/:id" => "follow#follow", as: "follow"
+  post "unfollow/:id" => "follow#unfollow", as: "unfollow"
+
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

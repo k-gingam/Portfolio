@@ -10,13 +10,19 @@
     <p><%= @user.name %></p>
   </div>
   <div class="follower">
-    <p>○○人のフォロワー</p>
+    <p><%= follower_count(@user_follower) %>人のフォロワー</p>
   </div>
   <div class="button">
-    <% if logged_in? && @user.id == current_user.id %>
-      <%= link_to t('.edit'), edit_profile_path(current_user.id), class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to t('.follow'), "#", class: "btn btn-light" %>
+    <% if logged_in? %>
+      <% if @user.id == current_user.id %>
+        <%= link_to t('.edit'), edit_profile_path(current_user.id), class: "btn btn-primary" %>
+      <% else %>
+        <% if current_user.following?(@user) %>
+          <%= link_to 'フォロー解除', unfollow_path(@user.id), data: { turbo_method: :post }, class: "btn btn-light" %>
+        <% else %>
+          <%= link_to 'フォロー', follow_path(@user.id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -26,7 +32,6 @@
 </div>
 
 <hr>
-
 
 <div class="post">
   <%= render partial: 'shared/post', collection: @posts %>
