@@ -13,7 +13,8 @@ module PostsHelper
 
       # ビデオの詳細情報（snippet）を取得
       video_response = youtube.list_videos("snippet", id: @video_id)
-      video_response.items.first
+      video = video_response.items.first
+      video_info = [ { thumbnail: video.snippet.thumbnails.standard.url, title: video.snippet.title } ]
     end
   end
 

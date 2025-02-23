@@ -1,11 +1,21 @@
 
 header{
+    /*ヘッダーを上部に固定、表示優先度をサイドバーより高くする*/
     position: sticky;
     top: 0;
     z-index: 150;
 }
 
+.dropdown .dropdown-menu{
+    /*dropdown-menuのスタイルがなぜか読み込まれない為、サンプルコード内にあるスタイルを元に手動調整*/
+    position: absolute; 
+    inset: 0px auto auto 0px; 
+    margin: 0px; 
+    transform: translate(-90px, 60px);
+}
+
 #header_icon{
+    /*ヘッダーのアイコン表示用*/
     content: "";
     padding-top: 58%;
 

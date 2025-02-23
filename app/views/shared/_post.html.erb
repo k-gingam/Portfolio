@@ -6,7 +6,7 @@
         <% video_item = youtube_get_item(post.movie_url) %>
         <% if !video_item.nil? %>
           <%= link_to "https://www.youtube.com/watch?v=" + @video_id, target: :_blank do %>
-            <%= image_tag video_item.snippet.thumbnails.standard.url, style: "width: 100%; height: 100%;" %>
+            <%= image_tag video_item[0][:thumbnail], style: "width: 100%; height: 100%;" %>
           <% end %>
         <% else %>
           <div class="no_image", style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; background-color: #696969;">
@@ -43,7 +43,7 @@
             <%= link_to "#" + tag, posts_search_path(q: { tags_name_eq: tag }), style: "text-decoration: none; font-weight: bold;" %>
           <% end %><br>
           <% if !video_item.nil? %>
-            <b><%= video_item.snippet.title %></b><br>
+            <b><%= video_item[0][:title] %></b><br>
           <% else %>
             動画が見つかりませんでした。<br>
           <% end %>
