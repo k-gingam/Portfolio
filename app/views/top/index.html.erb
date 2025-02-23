@@ -1,4 +1,5 @@
-<p><%= t('.title') %></p>
 <% if logged_in? %>
-  <p> 現在、<%= current_user.name %>でログインしています。</p>
+  <%= render 'after_login' %>
+<% else %>
+  <%= render 'before_login' %>
 <% end %>

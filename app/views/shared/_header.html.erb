@@ -1,24 +1,20 @@
 <!-- ヘッダー用ページ -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary", style="background-color: #f08080; height: 80px;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #f08080 !important; height: 80px;">
 <!-- サイト名、 検索バー表示 -->
-  <div class="container-fluid">
-    <%= link_to t('top.index.site'), root_path, class: "navbar-brand"%>
+  <div class="container-fluid align-items-center">
+    <%= link_to t('top.index.site'), root_path, class: "navbar-brand" %>
     <ul class="navbar-nav me-auto">
       <%= search_form_for @q, url: posts_search_path do |f| %>
         <div class="d-flex">
-        <%= f.search_field :comment_or_tags_name_cont, class: 'form-control', placeholder: 'ポストを検索' %>
-        <%= f.submit '検索', class: 'btn btn-primary', style: "width: 70px;"%>
+          <%= f.search_field :comment_or_tags_name_cont, class: 'form-control', placeholder: 'ポストを検索' %>
+          <%= f.submit '検索', class: 'btn btn-primary', style: "width: 70px;"%>
         </div>
-     <% end %>
-
-      </ul>
+      <% end %>
+    </ul>
     <!-- 折り畳みボタン表示用 -->
-
-    <!-- メニューのナビボタン、メニュー(仮)はログイン中のアイコンに差し替え予定。折り畳み対応。 -->
-  </div>
-  <ul class="navbar-nav ms-auto mb-2", style= "margin: 10px 30px 0 0;">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <!-- メニューのナビボタン、折り畳み対応。 -->
+    <div class="dropdown text-end">
+      <a class="text-decoration-none dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
         <% if current_user.icon.url.present? %>
           <%= image_tag current_user.icon.url, id: "header_icon" %>
         <% else %>
@@ -31,6 +27,6 @@
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to t('top.index.logout'), login_path, data: { turbo_method: :delete }, class: "dropdown-item"%></li>
       </ul>
-    </li>
-  </ul>
+    </div>
+  </div>
 </nav>
