@@ -1,6 +1,7 @@
 <h1><%= t('.title') %></h1>
 
 <%= form_with model: @user do |form| %>
+  <%= render 'shared/error_message', object: form.object %>
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, value: params[:name] %>
