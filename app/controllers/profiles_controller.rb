@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
-    @posts = Post.where(user_id: @user.id)
+    @posts = Post.where(user_id: @user.id).order(created_at: :desc)
     @user_follower = @user.follower_user
   end
 

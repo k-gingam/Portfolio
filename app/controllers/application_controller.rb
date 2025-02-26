@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
 
     # Postテーブルから検索し、検索結果を@search_postsに渡す
     @q = Post.ransack(params[:q])
-    @search_posts = @q.result(distinct: true)
+    @search_posts = @q.result(distinct: true).order(created_at: :desc)
   end
 end

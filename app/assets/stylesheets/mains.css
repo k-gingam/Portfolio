@@ -112,6 +112,7 @@
   .card{
     width: 80%;
     margin: 20px auto;
+    /* ポストに影をつけておく */
     box-shadow: 2px 2px 3px;
   }
 
@@ -142,4 +143,38 @@
     margin: 0 0 0 3px;
     height: 25px;
     line-height: 25px;
+  }
+
+  .card-comment {
+    /* ポスト内のコメントを3行まで表示させる、溢れた場合は...と表示する */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+
+  /*---------- share/_after_loginで使用 -----------*/
+
+  .nav-tabs {
+    width: 100%;
+  }
+  
+  .nav-tabs .nav-item {
+    flex: 1;
+  }
+  
+  .nav-tabs .nav-item .nav-link {
+    width: 100%;
+    text-align: center;
+    
+    .active{
+      background-color: grey;
+    }
+  }
+
+  /*---------- その他 -----------*/
+
+  /* フォームの外枠の色を見やすいように調整*/
+  .form-control{
+    border-color: #3d3d3d;
   }

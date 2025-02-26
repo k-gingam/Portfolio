@@ -1,35 +1,22 @@
-<h1><%= t('.title') %></h1>
-
-<%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
-  <%= render 'shared/error_message', object: f.object %>
-
-  <!-- 元々あったエラーメッセージ表示用コード、後で見直す時の参考用に
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-    
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class=" col-md-8 col-lg-6 mx-auto">
+  <h1><%= t('.title') %></h1>
+  <%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
+    <%= render 'shared/error_message', object: f.object %>
+      
+    <div class="field mb-2">
+      <%= f.label :email, style: "display: block" %>
+      <%= @user.email %>
+    </div>
+    <div class="field mb-2">
+      <%= f.label :password %>
+      <%= f.password_field :password, style: "display: block", class: "form-control" %>
+    </div>
+    <div class="field mb-2">
+      <%= f.label :password_confirmation, style: "display: block"  %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit t('.change'), class: "btn btn-primary" %>
     </div>
   <% end %>
-  -->
-    
-  <div class="field">
-    <%= f.label :email, style: "display: block" %>
-    <%= @user.email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, style: "display: block" %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, style: "display: block"  %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit t('.change') %>
-  </div>
-<% end %>
+</div>
