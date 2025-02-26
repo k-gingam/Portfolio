@@ -1,22 +1,26 @@
-<h1><%= t('.title') %></h1>
-
-<%= form_with model: @user, url: login_path do |form| %>
+<div class=" col-md-8 col-lg-6 mx-auto">
+  <h1><%= t('.title') %></h1>
+  <%= form_with url: login_path do |form| %>
   <!-- ログイン用のフォーム -->
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :email, style: "display: block" %>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password, style: "display: block" %>
+      <%= form.password_field :password, class: "form-control" %>
+    </div>
+    <!-- ログイン用のボタン -->
+    <div class="mb-3">
+      <%= form.submit t('.login'), class: "btn btn-primary" %>
+    </div>
+  <% end %>
 
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.password_field :password %>
-  </div>
+  <!-- 新規登録用のリンク -->
+  <%= link_to t('.new_registration'), new_user_path %>
+  <!-- パスワードリセット用のリンク -->
+  <%= link_to t('.password_forget'), new_password_reset_path %>
 
-  <!-- ログイン用のボタン -->
-  <%= form.submit t('.login') %>
-<% end %>
+</div>
 
-<!-- 新規登録用のリンク -->
-<%= link_to t('.new_registration'), new_user_path %>
-<!-- パスワードリセット用のリンク -->
-<%= link_to t('.password_forget'), new_password_reset_path %>
+

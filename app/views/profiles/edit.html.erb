@@ -1,5 +1,5 @@
+<div class=" col-md-10 col-lg-8 mx-auto">
 <h1>プロフィール設定</h1>
-
 <%= form_with model: @user, url: profile_path do |form| %>
   <%= render 'shared/error_message', object: form.object %>
   <div class="profile_edit">
@@ -15,16 +15,16 @@
     </div>
 
     <div class="text_form">
-      <div>
+      <div class="mb-2">
         <%= form.label :name, style: "display: block" %>
-        <%= form.text_field :name, class: "mb-2", size: 29 %>
+        <%= form.text_field :name, class: "form-control" %>
       </div>
-      <div>
+      <div class="mb-2">
         <%= form.label :introduction, style: "display: block" %>
-        <%= form.text_area :introduction, class: "mb-2", cols: 30, rows: 5, style: "resize: none;"%>
+        <%= form.text_area :introduction, cols: 30, rows: 5, style: "resize: none;", class: "form-control" %>
       </div>
       <div style="display: block;">
-        <%= form.submit t('.change') %>
+        <%= form.submit t('.change'), class: "btn btn-primary" %>
       </div>
     </div>
   </div>

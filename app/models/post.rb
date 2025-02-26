@@ -17,7 +17,7 @@ class Post < ApplicationRecord
     # 正しいURLで入力されているかどうか、一応ライブ動画も対応
     if movie_url.present?
       if !movie_url.start_with?("https://youtu.be/") && !movie_url.start_with?("https://www.youtube.com/live/")
-        errors.add(:movie_url, "が正しい入力ではありません、YouTubeの共有ボタンからリンクを取得してください") # save失敗のためにerror文、メッセージ対応は後で
+        errors.add(:movie_url, "が正しくありません、YouTubeの共有ボタンからを取得してください") # save失敗のためにerror文、メッセージ対応は後で
       end
     end
   end
