@@ -22,9 +22,11 @@
       <%= form.password_field :password_confirmation, class: "form-control" %>
     </div>
 
+    <p>新規ユーザー登録をされた際、
+       <%= link_to "利用規約", term_path %>及び
+       <%= link_to "プライバシーポリシー", privacy_path %>に同意したとみなします。</p>
     <div class="mb-2" style="display: inline-block;">
       <%= form.submit t('.submit'), class: "btn btn-primary" %>
     </div>
-
   <% end %>
 </div>

@@ -17,9 +17,13 @@ Rails.application.routes.draw do
   # ポスト検索画面のルーティング追加
   get "posts/search",  to: "posts#search"
 
-  # route.rbに追記
+  # フォロー機能作成用のルーティング設定
   post "follow/:id" => "follow#follow", as: "follow"
   post "unfollow/:id" => "follow#unfollow", as: "unfollow"
+
+  # 利用規約、プライバシーポリシーのルーティング設定
+  resource :term, only: %i[show]
+  resource :privacy, only: %i[show]
 
   # ↓ここからは生成された時からあるもの
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
