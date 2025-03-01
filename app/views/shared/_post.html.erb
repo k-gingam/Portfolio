@@ -6,7 +6,11 @@
         <% video_item = youtube_get_item(post.movie_url) %>
         <% if !video_item.nil? %>
           <%= link_to "https://www.youtube.com/watch?v=" + @video_id, target: :_blank do %>
-            <%= image_tag video_item[0][:thumbnail], style: "width: 100%; height: 100%;" %>
+            <% if !video_item.snippet.thumbnails.standard.nil? %>
+              <%= image_tag video_item.snippet.thumbnails.standard.url, style: "width: 100%; height: 100%;" %>
+            <% else %>
+              <%= image_tag video_item.snippet.thumbnails.default.url, style: "width: 100%; height: 100%;" %>
+            <% end %>  
           <% end %>
         <% else %>
           <div class="no_image", style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; background-color: #696969;">
@@ -41,15 +45,20 @@
 
         <!-- タグ、動画タイトル、表示回数、投稿日を下寄せで表示 -->
         <div class="card-other", style="margin-top: auto; font-size: 11px;">
-          <% get_tag_name(post.id).each do |tag| %>
-            <%= link_to "#" + tag, posts_search_path(q: { tags_name_eq: tag }), style: "text-decoration: none; font-weight: bold;" %>
-          <% end %><br>
-          <% if !video_item.nil? %>
-            <b><%= video_item[0][:title] %></b><br>
-          <% else %>
-            動画が見つかりませんでした。<br>
-          <% end %>
-          投稿日:<%= posttime_output(post.created_at) %>, 表示回数:<%= post.view_count %>回
+          <dev class="tag">
+            <% get_tag_name(post.id).each do |tag| %>
+              <%= link_to "#" + tag, posts_search_path(q: { tags_name_eq: tag }), style: "text-decoration: none; font-weight: bold;" %>
+            <% end %><br>
+          </dev>
+          <dev class="movie_title">
+            <% if !video_item.nil? %>
+              <b><%= video_item.snippet.title %></b><br>
+            <% else %>
+              動画が見つかりませんでした。<br>
+            <% end %>
+          </dev>
+          
+          <dev>投稿日:<%= posttime_output(post.created_at) %>, 表示回数:<%= post.view_count %>回</dev>
           <%= postview_count(post) %>
         </div>
       </div>
