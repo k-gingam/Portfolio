@@ -153,6 +153,22 @@
     overflow: hidden; 
   }
 
+  .card-other .tag{
+    /* ポスト内のタグを1行まで表示させる、溢れた場合は...と表示する */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+
+  .card-other .movie_title{
+    /* ポスト内の動画タイトル名を1行まで表示させる、溢れた場合は...と表示する */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+
   /*---------- share/_after_loginで使用 -----------*/
 
   .nav-tabs {
