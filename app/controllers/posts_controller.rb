@@ -37,6 +37,7 @@ class PostsController < ApplicationController
   end
 
   def multi
+    # 入力された検索キーワードの内、部分一致したワード5つを取得して検索候補に表示
     @search_tags = Tag.where("name like ?", "%#{params[:q]}%").limit(5)
     respond_to do |format|
       format.js
