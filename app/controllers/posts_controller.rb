@@ -21,13 +21,27 @@ class PostsController < ApplicationController
     end
   end
 
-  def search; end
+  def search
+    if params[:q].present?
+      if params[:q][:comment_or_tags_name_cont].present?
+        @search_ward = params[:q][:comment_or_tags_name_cont]
+      elsif params[:q][:tags_name_eq].present?
+        @search_ward = params[:q][:tags_name_eq]
+      end
+    end
+  end
 
   def destroy
     Post.find_by(id: params[:id]).destroy
     redirect_to profile_path(current_user.id), info: t(".delete.delete_post")
   end
 
+  def multi
+    @search_tags = Tag.where("name like ?", "%#{params[:q]}%").limit(5)
+    respond_to do |format|
+      format.js
+    end
+  end
   private
 
   def post_params

@@ -5,9 +5,13 @@
     <%= link_to t('top.index.site'), root_path, class: "navbar-brand" %>
     <ul class="navbar-nav me-auto">
       <%= search_form_for @q, url: posts_search_path do |f| %>
-        <div class="d-flex">
-          <%= f.search_field :comment_or_tags_name_cont, class: 'form-control', placeholder: 'ポストを検索' %>
-          <%= f.submit '検索', class: 'btn btn-primary', style: "width: 70px;"%>
+        <div class="d-flex" style="position: realative;">
+          <div data-controller="autocomplete" data-autocomplete-url-value="/posts/multi" role="combobox" style="position: relative;">
+            <%= f.search_field :comment_or_tags_name_cont, class: 'form-control', placeholder: 'ポストを検索', data: { autocomplete_target: 'input' }, style: "width: 300px;" %>
+            <%= f.hidden_field :tags_name, data: { autocomplete_target: 'hidden' } %>
+            <ul class="multi_search list-group bg-white" data-autocomplete-target="results" style="list-style: none; position: absolute;" ></ul>
+          </div>
+          <%= f.submit '検索', class: 'btn btn-primary', style: "width: 70px; height: 40px;" %>
         </div>
       <% end %>
     </ul>

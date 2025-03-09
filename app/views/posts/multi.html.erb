@@ -1,0 +1,5 @@
+<% @search_tags.each do |tag| %>
+  <li class="py-2 px-4" role="option" data-autocomplete-value="<%= tag.id %>" data-autocomplete-label="<%= tag.name %>">
+    <%= tag.name %>
+  </li>
+<% end %>

@@ -64,7 +64,7 @@ gem "mini_racer"
 gem "timeout", "~> 0.4.3"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# 画像加工目的用
+# 画像加工用
 gem "mini_magick"
 gem "image_processing", "~> 1.2"
 
