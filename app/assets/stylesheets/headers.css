@@ -6,6 +6,18 @@ header{
     z-index: 150;
 }
 
+/* 検索候補の表示調整用 */
+.multi_search li{
+    width: 300px; /* 検索フォームを参考にサイズ設定 */
+    white-space: nowrap; /* テキストを折り返さないようにする */
+    overflow: hidden; /* はみ出た部分を表示しない */
+    text-overflow: ellipsis; /* はみ出た場合、「…」と表示 */
+}
+
+.multi_search li:hover{
+    background-color: #f5f5f5;
+}
+
 .dropdown .dropdown-menu{
     /*dropdown-menuのスタイルがなぜか読み込まれない為、サンプルコード内にあるスタイルを元に手動調整*/
     position: absolute; 

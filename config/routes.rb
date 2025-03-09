@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[new create destroy]
   # ポスト検索画面のルーティング追加
   get "posts/search",  to: "posts#search"
+  get "posts/multi",  to: "posts#multi"
 
   # フォロー機能作成用のルーティング設定
   post "follow/:id" => "follow#follow", as: "follow"

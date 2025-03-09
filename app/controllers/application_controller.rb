@@ -10,13 +10,6 @@ class ApplicationController < ActionController::Base
 
   def set_search
     # フォームもしくはタグを使用して検索した際、検索ワードの抽出
-    if params[:q].present?
-      if params[:q][:comment_or_tags_name_cont].present?
-        @search_ward = params[:q][:comment_or_tags_name_cont]
-      elsif params[:q][:tags_name_eq].present?
-        @search_ward = params[:q][:tags_name_eq]
-      end
-    end
 
     # Postテーブルから検索し、検索結果を@search_postsに渡す
     @q = Post.ransack(params[:q])
