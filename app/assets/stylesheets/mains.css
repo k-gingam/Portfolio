@@ -109,7 +109,7 @@
   
   /*---------- share/_postで使用 -----------*/
 
-  .card{
+  .postcard{
     width: 80%;
     margin: 20px auto;
     /* ポストに影をつけておく */
@@ -171,6 +171,7 @@
 
   /*---------- share/_after_loginで使用 -----------*/
 
+  /* トップページのタブ表示を整理 */
   .nav-tabs {
     width: 100%;
   }
@@ -187,6 +188,13 @@
       background-color: grey;
     }
   }
+
+  /*---------- posts/newで使用-----------*/
+
+  /* ゲーム検索画面でフォームにカーソルを重ねた際、背景色を変更 */
+  .js-search_result .card:hover{
+    background-color: #f5f5f5;
+}
 
   /*---------- その他 -----------*/
 

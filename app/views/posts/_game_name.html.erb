@@ -1,0 +1,32 @@
+<head>
+  <!-- javascript読み込み用 -->>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<div class="modal fade" id="GameSelect" tabindex="-1" aria-labelledby="GameSelectLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="GameSelectLavel">ゲーム名を選択</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <p>API仕様の都合上、英語名での検索のみ対応しています。<br>
+      お手数ですが英語名でゲームの検索をお願いします。</p>
+      <p>ゲームが見つからなければ無入力でも構いません。</p>
+      <%= form_with do |form| %>
+        <div class="d-flex">
+          <%= form.text_field :word, class: "form-control" %>
+          <%= form.submit "検索", id: "search_btn", class: "btn btn-primary", style: "width: 70px;" %>
+        </div>
+        <ul class="js-search_result" style="padding-left: 0;"></ul>
+      <% end %>
+    
+    <!-- ゲーム検索用のスクリプト -->
+      <script type="module">
+        import "search_game";
+      </script>
+      </div>
+    </div>
+  </div>
+</div>

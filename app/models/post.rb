@@ -6,6 +6,11 @@ class Post < ApplicationRecord
   # 中間テーブルpost_tagsを通してtagsと関連
   has_many :tags, through: :post_tags
 
+  # ポストが削除されたら中間テーブルpost_gamesの関連データも削除
+  has_many :post_games, dependent: :destroy
+  # 中間テーブルpost_gamesを通してgamesと関連
+  has_many :games, through: :post_games
+
   # 動画URL、コメントのモデル設定
   validates :movie_url, presence: true, length: { maximum: 255 }
   validates :comment, presence: true, length: { maximum: 255 }
@@ -17,7 +22,7 @@ class Post < ApplicationRecord
     # 正しいURLで入力されているかどうか、一応ライブ動画も対応
     if movie_url.present?
       if !movie_url.start_with?("https://youtu.be/") && !movie_url.start_with?("https://www.youtube.com/live/")
-        errors.add(:movie_url, "が正しくありません、YouTubeの共有ボタンからを取得してください") # save失敗のためにerror文、メッセージ対応は後で
+        errors.add(:movie_url, "が正しくありません、YouTubeの共有ボタンからを取得してください") # save失敗のためのerror文
       end
     end
   end
@@ -34,6 +39,11 @@ class Post < ApplicationRecord
       #   self.tags << post_tag
       # end
     end
+  end
+
+  def save_game(game_name, game_icon)
+    post_game = Game.find_or_create_by(name: game_name, icon: game_icon)
+    self.games << post_game
   end
 
   # ポスト検索する際、検索可能なカラムの追加
