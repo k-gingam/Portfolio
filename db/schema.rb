@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_22_055910) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_10_134337) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,13 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_055910) do
     t.index ["following_id"], name: "index_follows_on_following_id"
   end
 
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "histories", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -30,6 +37,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_055910) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_histories_on_post_id"
     t.index ["user_id"], name: "index_histories_on_user_id"
+  end
+
+  create_table "post_games", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_post_games_on_game_id"
+    t.index ["post_id"], name: "index_post_games_on_post_id"
   end
 
   create_table "post_tags", force: :cascade do |t|
@@ -57,6 +73,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_055910) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_games", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_games_on_game_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -80,7 +105,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_22_055910) do
   add_foreign_key "follows", "users", column: "following_id"
   add_foreign_key "histories", "posts"
   add_foreign_key "histories", "users"
+  add_foreign_key "post_games", "games"
+  add_foreign_key "post_games", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "users"
+  add_foreign_key "user_games", "games"
+  add_foreign_key "user_games", "users"
 end

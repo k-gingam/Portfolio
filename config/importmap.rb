@@ -10,3 +10,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "popper", to: "popper.js", preload: true
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "stimulus-autocomplete" # @3.1.0
+pin "search_game", to: "search_game.js"

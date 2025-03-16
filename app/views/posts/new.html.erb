@@ -14,10 +14,21 @@
       <%= form.label :tag, style: "display: block" %>
       <%= form.text_field :tag, class: "form-control", placeholder: 'タグを複数つける場合、「タグ1,タグ2,タグ3,...」と「,」でタグを分けてください' %>
     </div>
+    <div class="mb-2">
+      <%= form.label :game_name, style: "display: block" %>
+      <div class="d-flex">
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#GameSelect" style="width: 70px;">選択</button>
+        <%= form.text_field :game_name, class: "form-control", style: "background-color: white;", id: "game_name", placeholder: '選択を押してゲーム検索' %>
+        <%= form.hidden_field :game_icon, id: "game_icon" %>
+      </div>
+    </div>
 
     <div style="display: block;">
       <%= form.submit t('.submit'), class: "btn btn-primary"  %>
     </div>
   <% end %>
+  <%= render 'game_name' %>
 </div>
+
+
 
