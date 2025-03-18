@@ -9,6 +9,9 @@ class User < ApplicationRecord
   # 中間テーブルuser_gamesを通してgamesと関連
   has_many :games, through: :user_games
 
+  # ポストが削除されたら中間テーブルHistoriesの関連データも削除
+  has_many :histories, dependent: :destroy
+
   # 中間テーブルFollowとの関連付け、「User多」対「User多」の関係となるがクラス名を宣言することで別々の関連付けの宣言にする
   has_many :following, class_name: "Follow", foreign_key: "following_id", dependent: :destroy
   has_many :follower, class_name: "Follow", foreign_key: "follower_id", dependent: :destroy

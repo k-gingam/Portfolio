@@ -41,7 +41,12 @@ module PostsHelper
 
   # ポストが表示された回数をカウントするメソッド
   def postview_count(post)
-    Post.find_by(id: post.id).update(view_count: post.view_count + 1)
+    # HistoryテーブルとPostテーブルを結合した際にpost_idメソッドが出来てしまう為、メソッドの存在チェックにより参照ポストIDを変更
+    if post.respond_to?(:post_id)
+      Post.find_by(id: post.post_id).update(view_count: post.view_count + 1)
+    else
+      Post.find_by(id: post.id).update(view_count: post.view_count + 1)
+    end
     nil
   end
 

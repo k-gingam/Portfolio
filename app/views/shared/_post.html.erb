@@ -2,15 +2,15 @@
   <div class="row g-0">
     <!-- サムネイルの表示 -->
     <div class="col-md-3">
-      <div class="thumbnail" style="width: 100%; height: 100%;">
+      <div class="thumbnail" style="width: 100%; height: 100%;" data-post-id="<%= post.id %>" >
         <% video_item = youtube_get_item(post.movie_url) %>
         <% if !video_item.nil? %>
-          <%= link_to "https://www.youtube.com/watch?v=" + @video_id, target: :_blank do %>
+          <%= link_to "https://www.youtube.com/watch?v=" + @video_id, class: "",id: "link_youtube", target: :_blank do %>
             <% if !video_item.snippet.thumbnails.standard.nil? %>
               <%= image_tag video_item.snippet.thumbnails.standard.url, style: "width: 100%; height: 100%;" %>
             <% else %>
               <%= image_tag video_item.snippet.thumbnails.default.url, style: "width: 100%; height: 100%;" %>
-            <% end %>  
+            <% end %>
           <% end %>
         <% else %>
           <div class="no_image", style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; background-color: #696969;">
@@ -73,3 +73,5 @@
     </div>
   </div>
 </div>
+
+

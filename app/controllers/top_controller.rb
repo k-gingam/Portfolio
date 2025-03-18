@@ -7,7 +7,7 @@ class TopController < ApplicationController
       if User.find_by(id: current_user.id).following_user
         follow_ids = []
         User.find_by(id: current_user.id).following_user.each do |follow|
-            follow_ids.push(follow.id)
+          follow_ids.push(follow.id)
         end
         @follow_posts = Post.where(user_id: follow_ids)
       end

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   # ポスト検索画面のルーティング追加
   get "posts/search",  to: "posts#search"
   get "posts/multi",  to: "posts#multi"
+  # ゲーム検索画面のルーティング追加
   post "posts/search_game",  to: "posts#search_game"
+  # 閲覧履歴のルーティング追加
+  get "posts/history",  to: "posts#history"
+  post "histories/create", to: "histories#create"
 
   # フォロー機能作成用のルーティング設定
   post "follow/:id" => "follow#follow", as: "follow"

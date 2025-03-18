@@ -11,6 +11,9 @@ class Post < ApplicationRecord
   # 中間テーブルpost_gamesを通してgamesと関連
   has_many :games, through: :post_games
 
+  # ポストが削除されたら中間テーブルHistoriesの関連データも削除
+  has_many :histories, dependent: :destroy
+
   # 動画URL、コメントのモデル設定
   validates :movie_url, presence: true, length: { maximum: 255 }
   validates :comment, presence: true, length: { maximum: 255 }

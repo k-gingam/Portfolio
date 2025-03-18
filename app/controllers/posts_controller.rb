@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # CSRFトークンを無視し、Ajaxでのリクエストを許可する
   skip_forgery_protection
 
   def new
@@ -89,6 +90,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.js { render json: @games }
     end
+  end
+
+  def history
+    @history_posts = History.joins(:post).select("histories.*, posts.movie_url, posts.comment, view_count").where(user_id: current_user.id).order(updated_at: :desc)
   end
 
   private
