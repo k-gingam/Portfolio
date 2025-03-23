@@ -1,21 +1,21 @@
 <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#new_post" type="button">
-        新規投稿
-      </button>
-    </li>
     <li class="nav-item" style="flex: 1;">
       <button class="nav-link active"  data-bs-toggle="tab" data-bs-target="#follow_post" type="button">
         フォロー
       </button>
     </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#recommend_post" type="button">
+        おすすめ
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#new_post" type="button">
+        新規投稿
+      </button>
+    </li>
   </ul>
   <div class="tab-content">
-    <div id="new_post" class="tab-pane">
-      <div class="post">
-        <%= render partial: 'shared/post', collection: @new_posts %>
-      </div>
-    </div>
     <div id="follow_post" class="tab-pane active">
       <div class="post">
         <% if @follow_posts.present? %>
@@ -26,4 +26,15 @@
         <% end %>
       </div>
     </div>
+    <div id="new_post" class="tab-pane">
+      <div class="post">
+        <%= render partial: 'shared/post', collection: @new_posts %>
+      </div>
+    </div>
+    <div id="recommend_post" class="tab-pane">
+      <div class="post">
+        <%= render partial: 'shared/post', collection: @recommend_posts %>
+      </div>
+    </div>
+    
   </div>
