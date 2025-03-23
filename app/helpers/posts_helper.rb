@@ -29,6 +29,7 @@ module PostsHelper
     URI(uri.path.split("/").last)  # URLに含まれている動画idを返す
   end
 
+  # ポストに貼られたタグ名を取得するメソッド
   def get_tag_name(id)
     @tag_names = []
     if PostTag.exists?(post_id: id)
@@ -37,6 +38,14 @@ module PostsHelper
       end
     end
     @tag_names
+  end
+
+  # ポストに貼られたゲーム名を取得するメソッド
+  def get_game_name(id)
+    if PostGame.exists?(post_id: id)
+      game = Game.find_by(id: PostGame.find_by(post_id: id).game_id).name
+    end
+    game
   end
 
   # ポストが表示された回数をカウントするメソッド
