@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.0.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
@@ -52,7 +52,7 @@ gem "letter_opener", group: :development
 gem "config"
 
 # i18n設定用
-gem "rails-i18n", "~> 7.0.0"
+gem "rails-i18n", "~> 8.0.1"
 
 # CSSフレームワークのBootstrap5をインストール
 gem "bootstrap", "~> 5.2.0"
