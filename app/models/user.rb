@@ -51,4 +51,15 @@ class User < ApplicationRecord
   def following?(user)
     following_user.include?(user)
   end
+
+  # ゲームのお気に入り登録処理
+  def game_bookmark(game_id, user_id)
+    UserGame.create(game_id: game_id, user_id: user_id)
+  end
+  def game_unbookmark(game_id, user_id)
+    UserGame.find_by(game_id: game_id, user_id: user_id).destroy
+  end
+  def game_bookmark?(game_id, user_id)
+    UserGame.exists?(game_id: game_id, user_id: user_id)
+  end
 end

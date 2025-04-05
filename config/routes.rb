@@ -17,11 +17,25 @@ Rails.application.routes.draw do
   # ポスト検索画面のルーティング追加
   get "posts/search",  to: "posts#search"
   get "posts/multi",  to: "posts#multi"
+
   # ゲーム検索画面のルーティング追加
   post "posts/search_game",  to: "posts#search_game"
-  # 閲覧履歴のルーティング追加
+
+  # 閲覧履歴用のルーティング追加
   get "posts/history",  to: "posts#history"
-  post "histories/create", to: "histories#create"
+  # 閲覧したポストを保存する用のルーティング追加
+  post "histories/create", to: "historiroutees#create"
+
+  # ゲーム一覧及び詳細画面のルーティング追加
+  resources :games, only: %i[show] do
+    collection do
+      get "list", to: "games#list"
+    end
+  end
+
+  # ゲームのブックマークのルーティング追加
+  post "bookmark/:id" => "bookmark#bookmark", as: "bookmark"
+  post "unbookmark/:id" => "bookmark#unbookmark", as: "unbookmark"
 
   # フォロー機能作成用のルーティング設定
   post "follow/:id" => "follow#follow", as: "follow"

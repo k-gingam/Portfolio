@@ -1,0 +1,8 @@
+<div class="card gamecard" style="width: 200px;">
+  <%= link_to game_path(game.id), style: "text-decoration: none; color: inherit;" do %>
+    <img src=<%= game.icon %> class="card-img-top" style="height: 200px;" >
+    <div class="card-body">
+      <div class="card-title"><%= game.name %></div>
+    </div>
+  <% end %>
+</div>
