@@ -77,6 +77,9 @@ gem "google-api-client", "~> 0.11"
 # 検索機能を実装する用
 gem "ransack"
 
+# 2025/4/5にGitHubでBrakemanが最新でないことからエラーが発生したため、それを対策
+gem 'brakeman'
+
 # ------ここまで-----------------------------
 
 group :development, :test do
