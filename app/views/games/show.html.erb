@@ -1,0 +1,26 @@
+<div class="game_name d-flex">
+  <img src=<%= @game.icon %> style="width: 150px; height: 150px;" >
+  <div class="game_info">
+    <div class="name">
+      <%= @game.name %>
+    </div>
+    <div class="post_count">
+      <p><%= @game_posts.size %>件の投稿</p>
+    </div>
+  </div>
+  <div class="button">
+    <% if logged_in? %>
+      <% if current_user.game_bookmark?(@game.id, current_user.id) %>
+        <%= link_to '登録解除', unbookmark_path(@game.id), data: { turbo_method: :post }, class: "btn btn-light" %>
+      <% else %>
+        <%= link_to 'お気に入り登録', bookmark_path(@game.id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<div class="post">
+  <%= render partial: 'shared/post', collection: @game_posts %>
+</div>

@@ -201,6 +201,48 @@
     background-color: #f5f5f5;
   }
 
+  /*---------- games/_gameで使用-----------*/
+
+  .gamecard a:hover{
+    opacity: 0.7;
+  }
+
+  .gamecard .card-body .card-title{
+    /* カード内のゲーム名を1行まで表示させる、溢れた場合は...と表示する */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+
+  /*---------- games/showで使用 ---------*/
+
+  .game_name .game_info .name{
+  margin: 0 0 0 20px;
+  line-height: 100px;
+
+  /* 名前を太字、フォントを大きく */
+  font-weight: bold;
+  font-size: 35px;
+
+  }
+
+  .game_name .game_info .post_count{
+    /* 投稿された数を薄く表示 */
+    margin: 0 0 0 20px;
+
+    font-weight: lighter;
+    font-size: 20px;
+  } 
+
+  .game_name .button {
+    /* ボタン表示の位置調整、上下だけゴリ押し気味 */
+    height: 100%;
+    line-height: 150px;
+    margin: 0 0 0 50px;
+  }
+
+
   /*---------- その他 -----------*/
 
   /* フォームの外枠の色を見やすいように調整*/
