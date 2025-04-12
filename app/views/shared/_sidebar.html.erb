@@ -7,17 +7,22 @@
           <%= link_to t('sidebar.post'), new_post_path, class: "btn btn-primary", style: "width: 70%;" %>
         </div>
         <hr style="color: white;">
-      <li class="sideber-nav nav-item">
-        <a class="nav-link" href="<%= list_games_path %>">
-          <span class="ml-2">ゲーム一覧</span>
+        <li class="sideber-nav nav-item">
+        <a class="nav-link" href="<%= follow_list_path %>">
+          <span class="ml-2">フォロー一覧</span>
         </a>
       </li>
-      <li class="sideber-nav nav-item">
-        <a class="nav-link" href="<%= posts_history_path %>">
-          <span class="ml-2">閲覧履歴</span>
-        </a>
-      </li>
-      <hr style="color: white;">
+        <li class="sideber-nav nav-item">
+          <a class="nav-link" href="<%= list_games_path %>">
+            <span class="ml-2">ゲーム一覧</span>
+          </a>
+        </li>
+        <li class="sideber-nav nav-item">
+          <a class="nav-link" href="<%= posts_history_path %>">
+            <span class="ml-2">閲覧履歴</span>
+          </a>
+        </li>
+        <hr style="color: white;">
       <% end %>
       <div class="term_and_privacy" style="text-align: center;">
         <%= link_to "利用規約", term_path, style: "text-decoration: none; color: white;" %>

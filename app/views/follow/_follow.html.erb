@@ -1,0 +1,17 @@
+<div class="card gamecard" style="width: 200px;">
+  <%= link_to profile_path(follow.id), style: "text-decoration: none; color: inherit;" do %>
+    <div class="card-img-top">
+      <div class="follow_icon">
+        <% if follow.icon.url.present? %>
+          <%= image_tag follow.icon.url, style: "height: 150px; width: 150px;" %>
+        <% else %>
+          <%= image_tag "DefaultUserIcon.png", style: "height: 150px; width: 150px;" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title" style="text-align: center; font-weight: bold;"><%= follow.name %></div>
+      <div class="follow_count" style="text-align: center;"><%= follower_count(follow.follower_user) %>人のフォロワー</div>
+    </div>
+  <% end %>
+</div>
