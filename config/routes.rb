@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   # プロフィール画面のルーティング設定
   resources :profiles, only: %i[show edit update destroy]
+
   # 設定画面のルーティング設定
   resources :settings, only: %i[edit update destroy]
   # ポスト画面のルーティング設定
@@ -40,6 +41,8 @@ Rails.application.routes.draw do
   # フォロー機能作成用のルーティング設定
   post "follow/:id" => "follow#follow", as: "follow"
   post "unfollow/:id" => "follow#unfollow", as: "unfollow"
+  get "follow/list" =>  "follow#list"
+
 
   # 利用規約、プライバシーポリシーのルーティング設定
   resource :term, only: %i[show]
