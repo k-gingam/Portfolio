@@ -4,10 +4,13 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [ :reset_password ]
+Rails.application.config.sorcery.submodules = [ :reset_password, :external ]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+  # 利用する外部サービスのプロバイダーを指定
+  config.external_providers = %i[google]
+
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -163,7 +166,15 @@ Rails.application.config.sorcery.configure do |config|
   # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
   # config.google.scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
-  #
+
+  # credentials.ymlから情報を取得
+  config.google.key = ENV["GOOGLE_CLIENT_ID"]
+  config.google.secret = ENV["GOOGLE_CLIENT_SECRET"]
+  # API設定で承認済みのリダイレクトURIとして登録したurlを設定
+  config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
+  # 外部サービスから取得したユーザー情報をUserモデルの指定した属性にマッピング
+  config.google.user_info_mapping = { email: "email", name: "name" }
+
   # For Microsoft Graph, the key will be your App ID, and the secret will be your app password/public key.
   # The callback URL "can't contain a query string or invalid special characters"
   # See: https://docs.microsoft.com/en-us/azure/active-directory/active-directory-v2-limitations#restrictions-on-redirect-uris
@@ -242,6 +253,9 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.scope = "openid"
   # --- user config ---
   config.user_config do |user|
+    # 外部サービスとの認証情報を保存するモデルを指定
+    user.authentications_class = Authentication
+
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

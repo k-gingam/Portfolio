@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  # Googleログイン用にauthenticationsと関連付け
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
+
   # ポストと関連付け、このユーザーが削除されたらポストも削除
   has_many :posts, dependent: :destroy
 

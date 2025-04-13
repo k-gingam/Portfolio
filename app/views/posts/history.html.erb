@@ -1,5 +1,10 @@
 <h1>閲覧履歴</h1>
 
-<div class="post">
-  <%= render partial: 'shared/post', collection: @history_posts %>
-</div>
+<% if @history_posts.present? %>
+  <div class="post">
+    <%= render partial: 'shared/post', collection: @history_posts %>
+  </div>
+<% else %>
+  <p>閲覧したポストはありません。
+  気になるポストをクリックしてYouTubeへ遷移した際、閲覧履歴に残るようになります。</p>
+<% end %>
