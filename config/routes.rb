@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "oauths/oauth"
+  get "oauths/callback"
   # root(トップページ)のルーティング設定
   root "top#index"
 
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
   # 閲覧履歴用のルーティング追加
   get "posts/history",  to: "posts#history"
   # 閲覧したポストを保存する用のルーティング追加
-  post "histories/create", to: "historiroutees#create"
+  post "histories/create", to: "histories#create"
 
   # ゲーム一覧及び詳細画面のルーティング追加
   resources :games, only: %i[show] do
@@ -42,6 +44,11 @@ Rails.application.routes.draw do
   post "follow/:id" => "follow#follow", as: "follow"
   post "unfollow/:id" => "follow#unfollow", as: "unfollow"
   get "follow/list" =>  "follow#list"
+
+  # Googleログイン用のルーティング設定
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
 
   # 利用規約、プライバシーポリシーのルーティング設定

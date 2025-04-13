@@ -93,7 +93,8 @@ class PostsController < ApplicationController
   end
 
   def history
-    @history_posts = History.joins(:post).select("histories.*, posts.movie_url, posts.comment, view_count").where(user_id: current_user.id).order(updated_at: :desc)
+    # ログインしているユーザーの閲覧履歴を取得し、@history_postsに代入
+    @history_posts = History.joins(:post).select("histories.*, posts.id, posts.user_id, posts.movie_url, posts.comment, posts.view_count, posts.created_at").where(user_id: current_user.id).order(updated_at: :desc)
   end
 
   private
