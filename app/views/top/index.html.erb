@@ -1,24 +1,9 @@
 <% if logged_in? %>
   <%= render 'after_login' %>
-  <script>
-    $('.thumbnail').on('click', function() {
-    const PostID = $(this).data('post-id');
-    $.ajax({
-      url: '/histories/create', 
-      type: 'POST',
-      data: { post_id: PostID },
-      dataType: 'json', 
-      success: function(response) {
-       console.log('Success');
-      },
-      error: function() {
-        console.log('failed');
-      }
-    });
-  });
+  <script type="module">
+    import "history_post";
   </script>
 <% else %>
   <%= render 'before_login' %>
 <% end %>
-
 

@@ -60,6 +60,12 @@
           
           <dev>投稿日:<%= posttime_output(post.created_at) %>, 表示回数:<%= post.view_count %>回</dev>
           <%= postview_count(post) %>
+          
+          <% if logged_in? %>
+            <%= link_to "https://twitter.com/share?url=https://omoro-play.com/&text=#{current_user.name}さんがゲーム動画を共有しました。%0a下記のURLから視聴できます。%0a#{post.movie_url}%0a%0a面白いゲーム動画を探すならこのサイト↓", class: "twitter-share-button", data: { show_count: "false" } do %>
+              <%= image_tag "X_Icon.png", width: "20px", height: "20px", title: "Xにシェアする" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
