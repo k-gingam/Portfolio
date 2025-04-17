@@ -11,3 +11,4 @@ pin "popper", to: "popper.js", preload: true
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "stimulus-autocomplete" # @3.1.0
 pin "search_game", to: "search_game.js"
+pin "history_post", to: "history_post.js"

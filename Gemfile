@@ -77,6 +77,10 @@ gem "google-api-client", "~> 0.11"
 # 検索機能を実装する用
 gem "ransack"
 
+# 静的OGPの設定用、metaタグとCORSの設定
+gem "meta-tags"
+gem "rack-cors"
+
 # ------ここまで-----------------------------
 
 group :development, :test do
