@@ -138,7 +138,7 @@ GEM
       reline (>= 0.3.8)
     declarative (0.0.20)
     deep_merge (1.2.2)
-    dotenv (3.1.7)
+    dotenv (3.1.8)
     drb (2.2.1)
     erubi (1.13.1)
     excon (1.2.3)
