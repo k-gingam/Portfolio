@@ -29,7 +29,7 @@ ja:
       title: 新規ユーザー登録
       submit: 登録
     create:
-      success_submit: 登録しました
+      success_submit: 登録したメールアドレスに認証メールを送信しました。
       error_submit: 登録に失敗しました
   password_resets:
     edit:

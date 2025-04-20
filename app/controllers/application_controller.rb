@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # ログイン専用ページに遷移しないようにする
+  # before_action :require_login
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
@@ -14,5 +17,10 @@ class ApplicationController < ActionController::Base
     # Postテーブルから検索し、検索結果を@search_postsに渡す
     @q = Post.ransack(params[:q])
     @search_posts = @q.result(distinct: true).order(created_at: :desc)
+  end
+
+  private
+  def not_authenticated
+    redirect_to root_path, danger: "エラーが発生しました。"
   end
 end

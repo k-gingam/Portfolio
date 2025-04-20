@@ -43,6 +43,14 @@ class User < ApplicationRecord
   # 自己紹介のテキスト設定
   validates :introduction, length: { maximum: 140 }
 
+  # メールアドレス変更用の認証メール設定
+  # メールアドレス変更を行った際、アクティベーション用のトークン生成を行う
+  before_update :setup_activation, if: -> { after_change_email_changed? }
+  # メールアドレス変更用の認証メールを送信する
+  def change_email
+    send_activation_needed_email!
+  end
+
   # ログインしているユーザーのフォロー処理
   def follow(user_id)
     following.create(follower_id: user_id)
@@ -65,5 +73,10 @@ class User < ApplicationRecord
   end
   def game_bookmark?(game_id, user_id)
     UserGame.exists?(game_id: game_id, user_id: user_id)
+  end
+
+  def change_email_rescue(login_email)
+    # activation_stateとactivation_tokenが通常のupdate文だと適用されない為、強制的にupdateする
+    User.find_by(email: login_email).update_columns(activation_state: "active", activation_token: nil, after_change_email: nil)
   end
 end
