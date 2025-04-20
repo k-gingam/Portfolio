@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   root "top#index"
 
   # ユーザー登録処理のルーティング設定
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create] do
+    member do
+      # メールアドレスの登録や変更時に認証処理を行うルーティング設定
+      get :activate
+    end
+  end
+  # ユーザーの退会処理のルーティング設定
   delete "users/destroy", to: "users#destroy"
 
   # ログイン処理のルーティング設定
@@ -16,7 +22,19 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[show edit update destroy]
 
   # 設定画面のルーティング設定
-  resources :settings, only: %i[edit update destroy]
+  resources :settings, only: %i[edit destroy] do
+    collection do
+      # メールアドレス変更用のルーティング設定
+      get :email
+      patch :email_update, action: :email_update
+      put :email_update, action: :email_update
+      # パスワード変更用のルーティング設定
+      get :password
+      patch :password_update, action: :password_update
+      put :password_update, action: :password_update
+    end
+  end
+
   # ポスト画面のルーティング設定
   resources :posts, only: %i[new create destroy]
   # ポスト検索画面のルーティング追加

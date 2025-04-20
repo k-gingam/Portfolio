@@ -10,4 +10,16 @@ class UserMailer < ApplicationMailer
     mail(to: user.email,
          subject: "パスワード変更の手続き")
   end
+
+  def activation_needed_email(user)
+    @user = user
+    @url  = activate_user_url(@user.activation_token)
+    if !user.after_change_email.nil?
+      mail(to: user.after_change_email, subject: "メール認証のお知らせ")
+    else
+      mail(to: user.email, subject: "メール認証のお知らせ")
+    end
+  end
+
+  def activation_success_email(user); end
 end

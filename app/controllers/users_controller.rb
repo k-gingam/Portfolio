@@ -26,6 +26,18 @@ class UsersController < ApplicationController
     redirect_to root_path, info: "退会しました。"
   end
 
+  def activate
+    if @user = User.load_from_activation_token(params[:id])
+      if !@user.after_change_email.nil?
+        User.find_by(id: @user.id).update(email: @user.after_change_email, after_change_email: nil)
+      end
+      @user.activate!
+      redirect_to root_path, success: "メール認証が成功しました。"
+    else
+      not_authenticated
+    end
+  end
+
   private
 
   def user_params
