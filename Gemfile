@@ -77,8 +77,9 @@ gem "google-api-client", "~> 0.11"
 # 検索機能を実装する用
 gem "ransack"
 
-# 静的OGPの設定用、metaタグとCORSの設定
+# 静的OGPの設定用、metaタグを簡易に設定する用
 gem "meta-tags"
+# 静的OGPの設定する際にCORSエラーに引っかかり、その対策に入れたが原因が別にあった為未使用
 gem "rack-cors"
 
 # ------ここまで-----------------------------
