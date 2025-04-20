@@ -17,8 +17,10 @@ class PostsController < ApplicationController
     if @post.save
       # タグの保存処理、"model/post"で処理を行う
       @post.save_tags(tag_names)
-      # ゲームの保存処理
-      @post.save_game(game_name, game_icon)
+      # ゲーム名が入力されている場合、ゲームの保存処理を行う
+      if game_name.present?
+        @post.save_game(game_name, game_icon)
+      end
 
       # ポスト投稿完了後、トップページに戻る
       redirect_to root_path, success: t(".success_post")

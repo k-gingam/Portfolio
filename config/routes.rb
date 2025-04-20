@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # ユーザー登録処理のルーティング設定
   resources :users, only: %i[new create]
+  delete "users/destroy", to: "users#destroy"
+
   # ログイン処理のルーティング設定
   resource :login, only: %i[new create destroy]
   # パスワードリセットのルーティング設定

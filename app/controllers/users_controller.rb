@@ -18,6 +18,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    # ユーザーの削除処理
+    user_id = session[:user_id]
+    logout
+    User.find_by(id: user_id).destroy
+    redirect_to root_path, info: "退会しました。"
+  end
+
   private
 
   def user_params
