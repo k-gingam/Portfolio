@@ -37,6 +37,10 @@ Rails.application.configure do
   # 画像がAWSに保存されるように変更
   # config.active_storage.service = :amazon
 
+  # 開発環境のみメールが送信されず、テスト用サイトに届く
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false
