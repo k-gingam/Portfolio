@@ -82,6 +82,9 @@ gem "meta-tags"
 # 静的OGPの設定する際にCORSエラーに引っかかり、その対策に入れたが原因が別にあった為未使用
 gem "rack-cors"
 
+# テストコードの網羅率の調査用
+gem "simplecov", require: false, group: :test
+
 # ------ここまで-----------------------------
 
 group :development, :test do
@@ -109,4 +112,11 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webdrivers"
+
+  # Rsepcを使用したテストコードの作成用
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "letter_opener_web"
 end

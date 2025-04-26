@@ -17,7 +17,7 @@
       <%= form_with do |form| %>
         <div class="d-flex">
           <%= form.text_field :word, class: "form-control" %>
-          <%= form.submit "検索", id: "search_btn", class: "btn btn-primary", style: "width: 70px;" %>
+          <%= form.submit "検索", id: "search_btn", class: "btn btn-primary search-btn", style: "width: 70px;" %>
         </div>
         <ul class="js-search_result" style="padding-left: 0;"></ul>
       <% end %>

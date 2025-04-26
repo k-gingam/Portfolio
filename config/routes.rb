@@ -88,6 +88,7 @@ Rails.application.routes.draw do
   # letteropenerのルーティング設定用(Portfolioはアプリケーション名)
   Portfolio::Application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.test?
   end
 
   # Defines the root path route ("/")
