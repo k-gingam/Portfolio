@@ -8,10 +8,8 @@ $(document).on('turbo:load', function() {
         data: { post_id: PostID },
         dataType: 'json', 
         success: function() {
-          console.log("success");
         },
         error: function() {
-          console.error("Error:");
         }
       });
     });
