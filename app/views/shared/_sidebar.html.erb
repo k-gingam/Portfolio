@@ -4,7 +4,7 @@
     <ul class="nav flex-column">
       <% if logged_in? %>
         <div class="post" style="text-align: center;">
-          <%= link_to t('sidebar.post'), new_post_path, class: "btn btn-primary", style: "width: 70%;" %>
+          <%= link_to t('sidebar.post'), new_post_path, class: "btn btn-primary", style: "width: 70%;", data: { turbo: "false" } %>
         </div>
         <hr style="color: white;">
         <li class="sideber-nav nav-item">
