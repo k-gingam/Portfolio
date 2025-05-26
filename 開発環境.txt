@@ -1,13 +1,12 @@
 ■ 開発環境: Docker
 ■ サーバサイド: Ruby on Rails 7系
 　　Ruby 3.2.2 Rails 7.2.2.1
-■ フロントエンド: HotWire
+■ フロントエンド: HotWire, jQuery
 ■ CSSフレームワーク: bootstrap5系
-■ WebAPI: YouTube API（YouTube動画埋め込み表示、タイトル表示）
+■ WebAPI: YouTube Date API, Gmail API, IGDB API
 ■ インフラ:
 ・ Webアプリケーションサーバ: Fly.io
 ・ ファイルサーバ: AWS S3
-・ セッションサーバ: Redis（Redis by Upstash）
 ・ データベースサーバ: PostgreSQL（Fly Postgres）
 ■ その他：
 ・ VCS: GitHub

@@ -64,14 +64,14 @@ gem "mini_racer"
 gem "timeout", "~> 0.4.3"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# 画像加工用
+# プロフィールのアイコン用画像の加工用
 gem "mini_magick"
 gem "image_processing", "~> 1.2"
 
 # .envファイルを読み込ませる用
 gem "dotenv"
 
-# YouTube APIを使うためのGoogle API
+# YouTube Date APIを使う為のGoogle APIを導入
 gem "google-api-client", "~> 0.11"
 
 # 検索機能を実装する用
