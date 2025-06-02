@@ -62,6 +62,21 @@ class PostsController < ApplicationController
     require "uri"
     require "json"
 
+    # IGDBのAPIを使用する為にアクセストークンを取得
+    uri = URI.parse("https://id.twitch.tv/oauth2/token")
+    request = Net::HTTP::Post.new(uri)
+    request.set_form_data({
+      "client_id" => ENV["IGDB_CLIENT_ID"],
+      "client_secret" => ENV["IGDB_SECRET_KEY"],
+      "grant_type" => "client_credentials"
+    })
+
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+
+    igdb_token = JSON.parse(response.body)["access_token"]
+
     # IGDBのAPIを使用してゲーム名を検索
     uri = URI.parse("https://api.igdb.com/v4/games")
     word = ' " ' + params[:word] + ' " '
@@ -69,7 +84,7 @@ class PostsController < ApplicationController
     request["Content-Type"] = "text/plain"
     request["Client-ID"] = ENV["IGDB_CLIENT_ID"]
     request["Accept"] = "application/json"
-    request["Authorization"] = "Bearer #{ENV["IGDB_ACCESS_TOKEN"]}"
+    request["Authorization"] = "Bearer #{igdb_token}"
 
     # 検索したい内容をリクエストに追加する(ゲーム名を検索し、検索結果にIDとゲーム名を取得、追加コンテンツの名前は削除)
     request.body = "search #{word};
