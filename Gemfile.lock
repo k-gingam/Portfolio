@@ -105,7 +105,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
-    brakeman (7.0.2)
+    brakeman (7.1.0)
       racc
     builder (3.3.0)
     capybara (3.40.0)
@@ -513,7 +513,7 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bootstrap (~> 5.2.0)
-  brakeman (~> 7.0.2)
+  brakeman (~> 7.1.0)
   capybara
   carrierwave
   config
